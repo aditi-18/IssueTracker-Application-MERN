@@ -8,4 +8,4 @@ Through this chapter I learnt how to setup a project in my local system. I was a
 serve that page from a web server. This helped me learn fundamentals of these technologies.I also learned how to work with  nvm, npm,JSX and babel. I also worked in pushing the code to  my github repository.
 
 ### Chap2-Result
-![](/ReadMeImages/Ch2.png)
+![](/ReadMeImages/Ch2.PNG)
