@@ -10,7 +10,7 @@ serve that page from a web server. This helped me learn fundamentals of these te
 ### Chap2-Result SnapShot
 ![](/ReadMeImages/Ch2.PNG)
 
-#### Problems faced in this chapter
--Working with babel.
--Working on the "Older Browsers Support" section.
--Adding snapshots to the README file.
+### Problems faced in this chapter
+*Working with babel.
+*Working on the "Older Browsers Support" section.
+*Adding snapshots to the README file.
