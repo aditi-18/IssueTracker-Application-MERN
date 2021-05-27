@@ -7,7 +7,7 @@ This is my repository for the project described in the book Pro MERN Stack (2nd 
 Through this chapter I learnt in detail about the react classses and components. Through the development of issue tracker application, I learnt composing components using React,passing input data from a parent component to a child component,dynamic composition,object property.
 
 ### Chap3-Result SnapShot.
-![](/ReadMeImages/Chp3.PNG)
+![](/ReadMeImages/Chap3.PNG)
 
 ### Problems faced in this chapter
 *Initial understanding of react classes and objects.
