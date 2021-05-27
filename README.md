@@ -1,6 +1,6 @@
 # My attempt on learning MERN by working on the book project, based on Pro MERN Stack 2nd Edition !!
 
-This is my repository for the project described in the book Pro MERN Stack (2nd Ed) by Vasan Subramanian. This readme contains my jouney of learning MERN. I will describe my learnings through every chapter. I will also list down the difficultilies I have faced in very chapter. Finally, I will also put down the results I achieve.
+This is my repository for the project described in the book Pro MERN Stack (2nd Ed) by Vasan Subramanian. This readme contains my jouney of learning MERN. I will describe my learnings through every chapter. I will also list down the difficultilies I have faced in very chapter. Finally, I will also put down the results I achieve.<br>
 
 ## Chapter3
 
@@ -10,7 +10,7 @@ Through this chapter I learnt in detail about the react classses and components.
 ![](/ReadMeImages/Chap3.PNG)
 
 ### Problems faced in this chapter
-*Initial understanding of react classes and objects.
+-Initial understanding of react classes and objects.<br>
 
 
 
@@ -24,6 +24,6 @@ serve that page from a web server. This helped me learn fundamentals of these te
 ![](/ReadMeImages/Ch2.PNG)
 
 ### Problems faced in this chapter
-*Working with babel.
-*Working on the "Older Browsers Support" section.
-*Adding snapshots to the README file.
+-Working with babel.
+-Working on the "Older Browsers Support" section.
+-Adding snapshots to the README file.
