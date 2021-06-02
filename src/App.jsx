@@ -22,6 +22,11 @@ const initialIssues = [
     }
    ];
 
+   const sampleIssue = {
+    status: 'New', owner: 'Pieta',
+    title: 'Completion date should be optional',
+   }
+
 
 class IssueFilter extends React.Component {
     render() {
@@ -32,11 +37,13 @@ class IssueFilter extends React.Component {
    }
 
 class IssueTable extends React.Component {
-    render() {
-
-        constructor(){
+    constructor()
+        {
             super();
             this.state = { issues: [] };
+            setTimeout(() => {
+                this.createIssue(sampleIssue);
+                }, 2000);
         }
          componentDidMount()
           {
@@ -48,6 +55,19 @@ class IssueTable extends React.Component {
             this.setState({ issues: initialIssues });
             }, 5000);
             }
+
+            createIssue(issue) {
+                issue.id = this.state.issues.length + 1;
+                issue.created = new Date();
+                const newIssueList = this.state.issues.slice();
+                newIssueList.push(issue);
+                this.setState({ issues: newIssueList });
+                }
+               
+
+    render() {
+
+        
 
          const issueRows = this.state.issues.map(issue =>
     <IssueRow key={issue.id} issue={issue} />
