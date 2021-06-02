@@ -1,5 +1,5 @@
 
-const issues = [
+const initialIssues = [
     {
     id: 1, status: 'New', FirstName: 'Sidharth', LastName:'Shukla',effort: 5,
     created: new Date('2018-08-15'), due: undefined,
@@ -30,9 +30,26 @@ class IssueFilter extends React.Component {
     );
     }
    }
-   class IssueTable extends React.Component {
+
+class IssueTable extends React.Component {
     render() {
-    const issueRows = issues.map(issue =>
+
+        constructor(){
+            super();
+            this.state = { issues: [] };
+        }
+         componentDidMount()
+          {
+            this.loadData();
+            }
+            loadData() 
+            {
+            setTimeout(() => {
+            this.setState({ issues: initialIssues });
+            }, 5000);
+            }
+
+         const issueRows = this.state.issues.map(issue =>
     <IssueRow key={issue.id} issue={issue} />
     );
     return (
