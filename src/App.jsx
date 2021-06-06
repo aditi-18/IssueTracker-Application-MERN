@@ -36,20 +36,18 @@ class IssueFilter extends React.Component {
     }
    }
 
-class IssueTable extends React.Component {
-   
-    render() {
-         const issueRows = this.props.issues.map(issue =>
+   function IssueTable(props) {
+    const issueRows = props.issues.map(issue =>
     <IssueRow key={issue.id} issue={issue} />
     );
     return (
-    <table align="center" className="bordered-table" >
+        <div>
+    <table className="bordered-table">
     <thead>
     <tr>
     <th>ID</th>
     <th>Status</th>
-    <th>Owner FirstName</th>
-    <th>Owner LastName</th>
+    <th>Owner</th>
     <th>Created</th>
     <th>Effort</th>
     <th>Due Date</th>
@@ -60,9 +58,10 @@ class IssueTable extends React.Component {
     {issueRows}
     </tbody>
     </table>
+    </div>
     );
-    }
    }
+
    class IssueAdd extends React.Component {
     constructor() {
     super();
@@ -90,7 +89,6 @@ class IssueTable extends React.Component {
             this.createIssue(sampleIssue);
             }, 2000);
     }
-
     componentDidMount()
     {
       this.loadData();
@@ -122,22 +120,21 @@ class IssueTable extends React.Component {
             )
         }
    }
-   class IssueRow extends React.Component {
-    render() {
-    const issue = this.props.issue;
+
+   function IssueRow(props) {
+    const issue = props.issue;
     return (
     <tr>
     <td>{issue.id}</td>
     <td>{issue.status}</td>
-    <td>{issue.FirstName}</td>
-    <td>{issue.LastName}</td>
+    <td>{issue.owner}</td>
     <td>{issue.created.toDateString()}</td>
     <td>{issue.effort}</td>
     <td>{issue.due ? issue.due.toDateString() : ''}</td>
     <td>{issue.title}</td>
     </tr>
     );
-    }
    }
+
    const element = <IssueList />;
    ReactDOM.render(element, document.getElementById('content'));
