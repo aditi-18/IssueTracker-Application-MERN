@@ -7,9 +7,9 @@ This is my repository for the project described in the book Pro MERN Stack (2nd 
 Through this chapter I learned how to make components repsond to user input and how react uses state data structure in component. I also learnt how to add add a button and append a row to using a form. 
 
 ### Chap4-Result SnapShot.
-![](/ReadMeImages/Chap4.PNG)
-![](/ReadMeImages/Chap4_1.PNG)
-![](/ReadMeImages/Chap4_2.PNG)
+![](/ReadMeImages/Chp4.PNG)
+![](/ReadMeImages/Capture4_1.PNG)
+![](/ReadMeImages/Capture4_2.PNG)
 
 ### Problems faced in this chapter
 -Initial understanding of useage of state.
