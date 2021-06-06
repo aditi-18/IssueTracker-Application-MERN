@@ -1,29 +1,30 @@
 
 const initialIssues = [
     {
-    id: 1, status: 'New', FirstName: 'Sidharth', LastName:'Shukla',effort: 5,
+    id: 1, status: 'New', Owner: 'Sidharth',effort: 5,
     created: new Date('2018-08-15'), due: undefined,
     title: 'Error in console when clicking Add',
     },
     {
-    id: 2, status: 'Assigned', FirstName: 'Akash',LastName:'Pandey', effort: 14,
+    id: 2, status: 'Assigned', Owner: 'Akash', effort: 14,
     created: new Date('2018-08-16'), due: new Date('2018-08-30'),
     title: 'Missing bottom border on panel',
     },
     {
-        id: 3, status: 'Assigned', FirstName: 'Srishti',LastName:'Arora', effort: 11,
+        id: 3, status: 'Assigned', Owner: 'Srishti', effort: 11,
     created: new Date('2018-08-18'), due: new Date('2018-07-13'),
     title: 'Missing Outline',
     },
     {
-        id: 4, status: 'New', FirstName: 'Amala',LastName:'Shrivastava',effort: 17,
+        id: 4, status: 'New', Owner: 'Amala',effort: 17,
         created: new Date('2018-04-18'), due: new Date('2019-07-10'),
         title: 'Missing document',
     }
    ];
 
+
    const sampleIssue = {
-    status: 'New', owner: 'Pieta',
+    status: 'New', Owner: 'Pieta',
     title: 'Completion date should be optional',
    }
 
@@ -62,32 +63,40 @@ class IssueFilter extends React.Component {
     );
    }
 
-   class IssueAdd extends React.Component {
-    constructor() {
-    super();
-    }
-    render() {
-    return (
-        <form>
-        <input type="text" name="owner" placeholder="Owner" />
-        <input type="text" name="title" placeholder="Title" />
-       
-<button>Add</button>
-        
-        </form>
-    );
-    }
-   }
+  
+    class IssueAdd extends React.Component {
+        constructor() {
+        super();
+        this.handleSubmit = this.handleSubmit.bind(this);
+        }
+        handleSubmit(e) {
+        e.preventDefault();
+        const form = document.forms.issueAdd;
+        const issue = {
+        Owner: form.Owner.value, title: form.title.value, status: 'New',
+        }
+        this.props.createIssue(issue);
+        form.Owner.value = ""; form.title.value = "";
+        }
 
+        render() {
+        return (
+        <form name="issueAdd" onSubmit={this.handleSubmit}>
+        <input type="text" name="Owner" placeholder="Owner" />
+        <input type="text" name="title" placeholder="Title" />
+        <button>Add</button>
+        </form>
+        );
+        }
+       }
    class IssueList extends React.Component {
 
     constructor()
     {
         super();
         this.state = { issues: [] };
-        setTimeout(() => {
-            this.createIssue(sampleIssue);
-            }, 2000);
+        this.createIssue = this.createIssue.bind(this);
+        
     }
     componentDidMount()
     {
@@ -127,7 +136,7 @@ class IssueFilter extends React.Component {
     <tr>
     <td>{issue.id}</td>
     <td>{issue.status}</td>
-    <td>{issue.owner}</td>
+    <td>{issue.Owner}</td>
     <td>{issue.created.toDateString()}</td>
     <td>{issue.effort}</td>
     <td>{issue.due ? issue.due.toDateString() : ''}</td>
