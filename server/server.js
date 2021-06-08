@@ -5,18 +5,11 @@ app.listen(3000, function () {
  console.log('App started on port 3000');
 });*/
 
-
+const fs = require('fs');
 const express = require('express');
 const { ApolloServer } = require('apollo-server-express');
 let aboutMessage = "Issue Tracker API v1.0";
-const typeDefs = `
- type Query {
- about: String!
- }
- type Mutation {
- setAboutMessage(message: String!): String
- }
-`;
+
 const resolvers = {
  Query: {
  about: () => aboutMessage,
@@ -29,7 +22,7 @@ function setAboutMessage(_, { message }) {
  return aboutMessage = message;
 }
 const server = new ApolloServer({
- typeDefs,
+ typeDefs:fs.readFileSync('./schema.graphql', 'utf-8'),
  resolvers,
 });
 const app = express();
