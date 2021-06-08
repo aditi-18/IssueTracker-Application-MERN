@@ -25,8 +25,7 @@ function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.g
 var initialIssues = [{
   id: 1,
   status: 'New',
-  FirstName: 'Sidharth',
-  LastName: 'Shukla',
+  Owner: 'Sidharth',
   effort: 5,
   created: new Date('2018-08-15'),
   due: undefined,
@@ -34,8 +33,7 @@ var initialIssues = [{
 }, {
   id: 2,
   status: 'Assigned',
-  FirstName: 'Akash',
-  LastName: 'Pandey',
+  Owner: 'Akash',
   effort: 14,
   created: new Date('2018-08-16'),
   due: new Date('2018-08-30'),
@@ -43,8 +41,7 @@ var initialIssues = [{
 }, {
   id: 3,
   status: 'Assigned',
-  FirstName: 'Srishti',
-  LastName: 'Arora',
+  Owner: 'Srishti',
   effort: 11,
   created: new Date('2018-08-18'),
   due: new Date('2018-07-13'),
@@ -52,8 +49,7 @@ var initialIssues = [{
 }, {
   id: 4,
   status: 'New',
-  FirstName: 'Amala',
-  LastName: 'Shrivastava',
+  Owner: 'Amala',
   effort: 17,
   created: new Date('2018-04-18'),
   due: new Date('2019-07-10'),
@@ -61,7 +57,7 @@ var initialIssues = [{
 }];
 var sampleIssue = {
   status: 'New',
-  owner: 'Pieta',
+  Owner: 'Pieta',
   title: 'Completion date should be optional'
 };
 
@@ -104,17 +100,38 @@ var IssueAdd = /*#__PURE__*/function (_React$Component2) {
   var _super2 = _createSuper(IssueAdd);
 
   function IssueAdd() {
+    var _this;
+
     _classCallCheck(this, IssueAdd);
 
-    return _super2.call(this);
+    _this = _super2.call(this);
+    _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_this));
+    return _this;
   }
 
   _createClass(IssueAdd, [{
+    key: "handleSubmit",
+    value: function handleSubmit(e) {
+      e.preventDefault();
+      var form = document.forms.issueAdd;
+      var issue = {
+        Owner: form.Owner.value,
+        title: form.title.value,
+        status: 'New'
+      };
+      this.props.createIssue(issue);
+      form.Owner.value = "";
+      form.title.value = "";
+    }
+  }, {
     key: "render",
     value: function render() {
-      return /*#__PURE__*/React.createElement("form", null, /*#__PURE__*/React.createElement("input", {
+      return /*#__PURE__*/React.createElement("form", {
+        name: "issueAdd",
+        onSubmit: this.handleSubmit
+      }, /*#__PURE__*/React.createElement("input", {
         type: "text",
-        name: "owner",
+        name: "Owner",
         placeholder: "Owner"
       }), /*#__PURE__*/React.createElement("input", {
         type: "text",
@@ -133,18 +150,16 @@ var IssueList = /*#__PURE__*/function (_React$Component3) {
   var _super3 = _createSuper(IssueList);
 
   function IssueList() {
-    var _this;
+    var _this2;
 
     _classCallCheck(this, IssueList);
 
-    _this = _super3.call(this);
-    _this.state = {
+    _this2 = _super3.call(this);
+    _this2.state = {
       issues: []
     };
-    setTimeout(function () {
-      _this.createIssue(sampleIssue);
-    }, 2000);
-    return _this;
+    _this2.createIssue = _this2.createIssue.bind(_assertThisInitialized(_this2));
+    return _this2;
   }
 
   _createClass(IssueList, [{
@@ -155,10 +170,10 @@ var IssueList = /*#__PURE__*/function (_React$Component3) {
   }, {
     key: "loadData",
     value: function loadData() {
-      var _this2 = this;
+      var _this3 = this;
 
       setTimeout(function () {
-        _this2.setState({
+        _this3.setState({
           issues: initialIssues
         });
       }, 500);
@@ -190,7 +205,7 @@ var IssueList = /*#__PURE__*/function (_React$Component3) {
 
 function IssueRow(props) {
   var issue = props.issue;
-  return /*#__PURE__*/React.createElement("tr", null, /*#__PURE__*/React.createElement("td", null, issue.id), /*#__PURE__*/React.createElement("td", null, issue.status), /*#__PURE__*/React.createElement("td", null, issue.owner), /*#__PURE__*/React.createElement("td", null, issue.created.toDateString()), /*#__PURE__*/React.createElement("td", null, issue.effort), /*#__PURE__*/React.createElement("td", null, issue.due ? issue.due.toDateString() : ''), /*#__PURE__*/React.createElement("td", null, issue.title));
+  return /*#__PURE__*/React.createElement("tr", null, /*#__PURE__*/React.createElement("td", null, issue.id), /*#__PURE__*/React.createElement("td", null, issue.status), /*#__PURE__*/React.createElement("td", null, issue.Owner), /*#__PURE__*/React.createElement("td", null, issue.created.toDateString()), /*#__PURE__*/React.createElement("td", null, issue.effort), /*#__PURE__*/React.createElement("td", null, issue.due ? issue.due.toDateString() : ''), /*#__PURE__*/React.createElement("td", null, issue.title));
 }
 
 var element = /*#__PURE__*/React.createElement(IssueList, null);

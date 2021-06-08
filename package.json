@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
+    "apollo-server-express": "^2.25.0",
     "express": "^4.17.1",
+    "graphql": "^15.5.0",
     "nodemon": "^1.19.4"
   },
   "devDependencies": {
@@ -15,7 +17,7 @@
     "@babel/preset-react": "^7.13.13"
   },
   "scripts": {
-    "start": "node server/server.js",
+    "start": "nodemon -w server -e js,graphql server/server.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "compile": "babel src --out-dir public",
     "watch": "babel src --out-dir public --watch --verbose"
