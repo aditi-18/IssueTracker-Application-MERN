@@ -1,14 +1,11 @@
-/*const express = require('express');
-const app = express();
-app.use(express.static('public'));
-app.listen(3000, function () {
- console.log('App started on port 3000');
-});*/
 
 const fs = require('fs');
 const express = require('express');
-const { ApolloServer } = require('apollo-server-express');
+const { ApolloServer, UserInputError } = require('apollo-server-express');
 const { GraphQLScalarType } = require('graphql');
+const { Kind } = require('graphql/language');
+
+
 let aboutMessage = "Issue Tracker API v1.0";
 
 const issuesDB = [
@@ -30,6 +27,17 @@ const issuesDB = [
    ];
 
    const GraphQLDate = new GraphQLScalarType({
+    parseValue(value) {
+        const dateValue = new Date(value);
+ return isNaN(dateValue) ? undefined : dateValue;
+        },
+        parseLiteral(ast) {
+            if (ast.kind == Kind.STRING) {
+                const value = new Date(ast.value);
+                return isNaN(value) ? undefined : value;
+                }
+        },
+        
     name: 'GraphQLDate',
     description: 'A Date() type in GraphQL as a scalar',
     serialize(value) {
@@ -44,12 +52,35 @@ const resolvers = {
  },
  Mutation: {
  setAboutMessage,
+ issueAdd,
  },
  GraphQLDate,
 };
 function setAboutMessage(_, { message }) {
- return aboutMessage = message;
+ return a
 }
+ 
+ function issueValidate(issue) {
+    const errors = [];
+    if (issue.title.length < 3) {
+    errors.push('Field "title" must be at least 3 characters long.')
+    }
+    if (issue.status == 'Assigned' && !issue.Owner) {
+    errors.push('Field "Owner" is required when status is "Assigned"');
+    }
+    if (errors.length > 0) {
+    throw new UserInputError('Invalid input(s)', { errors });
+    }
+   }
+
+
+function issueAdd(_, { issue }) {
+    issue.created = new Date();
+    issue.id = issuesDB.length + 1;
+    if (issue.status == undefined) issue.status = 'New';
+    issuesDB.push(issue);
+    return issue;
+   }
 
 function issueList() {
     return issuesDB;
@@ -57,6 +88,10 @@ function issueList() {
 const server = new ApolloServer({
  typeDefs:fs.readFileSync('./schema.graphql', 'utf-8'),
  resolvers,
+ formatError: error => {
+    console.log(error);
+    return error;
+ },
 });
 const app = express();
 app.use(express.static('public'));
