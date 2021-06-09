@@ -10,9 +10,23 @@ const express = require('express');
 const { ApolloServer } = require('apollo-server-express');
 let aboutMessage = "Issue Tracker API v1.0";
 
+const issuesDB = [
+    {
+    id: 1, status: 'New', Owner: 'Ravan', effort: 5,
+    created: new Date('2019-01-15'), due: undefined,
+    title: 'Error in console when clicking Add',
+    },
+    {
+    id: 2, status: 'Assigned', Owner: 'Eddie', effort: 14,
+    created: new Date('2019-01-16'), due: new Date('2019-02-01'),
+    title: 'Missing bottom border on panel',
+    },
+   ];
+
 const resolvers = {
  Query: {
  about: () => aboutMessage,
+ issueList,
  },
  Mutation: {
  setAboutMessage,
@@ -21,6 +35,10 @@ const resolvers = {
 function setAboutMessage(_, { message }) {
  return aboutMessage = message;
 }
+
+function issueList() {
+    return issuesDB;
+   }
 const server = new ApolloServer({
  typeDefs:fs.readFileSync('./schema.graphql', 'utf-8'),
  resolvers,
