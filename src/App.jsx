@@ -76,12 +76,13 @@ class IssueFilter extends React.Component {
     componentDidMount()
     {
       this.loadData();
-      }
+    }
+
     async loadData() 
       {
         const query = `query {
             issueList {
-            id title status owner
+            id title status Owner
             created effort due
             }
             }`;
