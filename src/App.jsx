@@ -1,33 +1,8 @@
 
-const initialIssues = [
-    {
-    id: 1, status: 'New', Owner: 'Sidharth',effort: 5,
-    created: new Date('2018-08-15'), due: undefined,
-    title: 'Error in console when clicking Add',
-    },
-    {
-    id: 2, status: 'Assigned', Owner: 'Akash', effort: 14,
-    created: new Date('2018-08-16'), due: new Date('2018-08-30'),
-    title: 'Missing bottom border on panel',
-    },
-    {
-        id: 3, status: 'Assigned', Owner: 'Srishti', effort: 11,
-    created: new Date('2018-08-18'), due: new Date('2018-07-13'),
-    title: 'Missing Outline',
-    },
-    {
-        id: 4, status: 'New', Owner: 'Amala',effort: 17,
-        created: new Date('2018-04-18'), due: new Date('2019-07-10'),
-        title: 'Missing document',
-    }
-   ];
-
-
    const sampleIssue = {
     status: 'New', Owner: 'Pieta',
     title: 'Completion date should be optional',
    }
-
 
 class IssueFilter extends React.Component {
     render() {
@@ -102,11 +77,21 @@ class IssueFilter extends React.Component {
     {
       this.loadData();
       }
-    loadData() 
+    async loadData() 
       {
-      setTimeout(() => {
-      this.setState({ issues: initialIssues });
-      }, 500);
+        const query = `query {
+            issueList {
+            id title status owner
+            created effort due
+            }
+            }`;
+            const response = await fetch('/graphql', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json'},
+            body: JSON.stringify({ query })
+            });
+            const result = await response.json();
+            this.setState({ issues: result.data.issueList });
       }
 
       createIssue(issue) {
@@ -137,9 +122,9 @@ class IssueFilter extends React.Component {
     <td>{issue.id}</td>
     <td>{issue.status}</td>
     <td>{issue.Owner}</td>
-    <td>{issue.created.toDateString()}</td>
+    <td>{issue.created}</td>
     <td>{issue.effort}</td>
-    <td>{issue.due ? issue.due.toDateString() : ''}</td>
+    <td>{issue.due}</td>
     <td>{issue.title}</td>
     </tr>
     );
