@@ -1,4 +1,9 @@
+const dateRegex = new RegExp('^\\d\\d\\d\\d-\\d\\d-\\d\\d');
 
+function jsonDateReviver(key, value) {
+ if (dateRegex.test(value)) return new Date(value);
+ return value;
+}
    const sampleIssue = {
     status: 'New', Owner: 'Pieta',
     title: 'Completion date should be optional',
@@ -91,7 +96,8 @@ class IssueFilter extends React.Component {
             headers: { 'Content-Type': 'application/json'},
             body: JSON.stringify({ query })
             });
-            const result = await response.json();
+            const body = await response.text();
+            const result = JSON.parse(body, jsonDateReviver);
             this.setState({ issues: result.data.issueList });
       }
 
@@ -123,9 +129,9 @@ class IssueFilter extends React.Component {
     <td>{issue.id}</td>
     <td>{issue.status}</td>
     <td>{issue.Owner}</td>
-    <td>{issue.created}</td>
+    <td>{issue.created.toDateString()}</td>
     <td>{issue.effort}</td>
-    <td>{issue.due}</td>
+    <td>{issue.due ? issue.due.toDateString() : ' '}</td>
     <td>{issue.title}</td>
     </tr>
     );
