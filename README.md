@@ -2,6 +2,25 @@
 
 This is my repository for the project described in the book Pro MERN Stack (2nd Ed) by Vasan Subramanian. This readme contains my jouney of learning MERN. I will describe my learnings through every chapter. I will also list down the difficultilies I have faced in very chapter. Finally, I will also put down the results I achieve.<br>
 
+## Chapter5
+
+Through this chapter I learned about express and GraphQL. I learnt how to handle server side requests. 
+
+### Chap5-Result SnapShot.
+![](/ReadMeImages/Chap5_1.PNG)
+![](/ReadMeImages/Chap5_2.PNG)
+![](/ReadMeImages/Chap5_3.PNG)
+![](/ReadMeImages/Chap5_4.PNG)
+![](/ReadMeImages/Chap5_5.PNG)
+![](/ReadMeImages/Chap5_6.PNG)
+
+### Problems faced in this chapter
+-Initial understanding of GraphQL.
+-GqaphQL is strongly typed which can lead to mistakes.<br>
+
+
+
+
 ## Chapter4
 
 Through this chapter I learned how to make components repsond to user input and how react uses state data structure in component. I also learnt how to add add a button and append a row to using a form. 

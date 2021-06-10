@@ -29,7 +29,7 @@ const issuesDB = [
    const GraphQLDate = new GraphQLScalarType({
     parseValue(value) {
         const dateValue = new Date(value);
- return isNaN(dateValue) ? undefined : dateValue;
+        return isNaN(dateValue) ? undefined : dateValue;
         },
         parseLiteral(ast) {
             if (ast.kind == Kind.STRING) {
@@ -56,9 +56,11 @@ const resolvers = {
  },
  GraphQLDate,
 };
-function setAboutMessage(_, { message }) {
- return a
-}
+
+    function setAboutMessage(_, { message }) {
+        return aboutMessage = message;
+    }
+
  
  function issueValidate(issue) {
     const errors = [];
