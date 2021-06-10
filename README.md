@@ -4,7 +4,7 @@ This is my repository for the project described in the book Pro MERN Stack (2nd 
 
 ## Chapter5
 
-Through this chapter I learned about express and GraphQL. I learnt how to handle server side requests. 
+Through this chapter I learned about express, REST API's and GraphQL. I learnt how to handle server side requests. 
 
 ### Chap5-Result SnapShot.
 ![](/ReadMeImages/Chap5_1.PNG)
