@@ -9,6 +9,9 @@ Through this chapter I've learned about mongo and basic CRUD operations. I also 
 ### Chap6-Result SnapShot.
 ![](/ReadMeImages/Chp6.PNG)
 
+ID field updated-
+![](/ReadMeImages/Chp6_1.PNG)
+
 ### Problems faced in this chapter
 -Setting up monogo environment.<br>
 
