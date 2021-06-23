@@ -2,6 +2,17 @@
 
 This is my repository for the project described in the book Pro MERN Stack (2nd Ed) by Vasan Subramanian. This readme contains my jouney of learning MERN. I will describe my learnings through every chapter. I will also list down the difficultilies I have faced in very chapter. Finally, I will also put down the results I achieve.<br>
 
+## Chapter6
+
+Through this chapter I've learned about mongo and basic CRUD operations. I also learned how to connect to mongo database.
+
+### Chap6-Result SnapShot.
+![](/ReadMeImages/Chp6.PNG)
+
+### Problems faced in this chapter
+-Setting up monogo environment.<br>
+
+
 ## Chapter5
 
 Through this chapter I learned about express, REST API's and GraphQL. I learnt how to handle server side requests. 
