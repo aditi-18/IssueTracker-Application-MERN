@@ -49,6 +49,7 @@ class IssueFilter extends React.Component {
     );
    }
 
+/* globals React ReactDOM PropTypes */
   
     class IssueAdd extends React.Component {
         constructor() {
@@ -79,6 +80,10 @@ class IssueFilter extends React.Component {
         );
         }
        }
+
+       IssueAdd.propTypes = {
+        createIssue: PropTypes.func.isRequired,
+       };
    class IssueList extends React.Component {
     constructor()
     {
