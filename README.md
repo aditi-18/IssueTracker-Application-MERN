@@ -2,6 +2,26 @@
 
 This is my repository for the project described in the book Pro MERN Stack (2nd Ed) by Vasan Subramanian. This readme contains my jouney of learning MERN. I will describe my learnings through every chapter. I will also list down the difficultilies I have faced in very chapter. Finally, I will also put down the results I achieve.<br>
 
+## Chapter7
+
+Through this chapter I've learned about the environment setup and it's architecture. I've also learnt how to work on clean code using eslint.
+
+### Chap7-Result SnapShot.
+
+Directory structure and clean linter code of api folder
+![](/ReadMeImages/Chap7_1.PNG)
+
+Directory structure and clean linter code of ui folder
+![](/ReadMeImages/Chap7_2.PNG)
+
+Display on port 8000
+![](/ReadMeImages/Chap7.PNG)
+
+### Problems faced in this chapter
+-Setting up  environment.
+-Understanding the working of server from api and ui.
+-Eslint indentation errors.<br>
+
 ## Chapter6
 
 Through this chapter I've learned about mongo and basic CRUD operations. I also learned how to connect to mongo database.
