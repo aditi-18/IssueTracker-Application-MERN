@@ -15,7 +15,7 @@ Directory structure and clean linter code of ui folder
 ![](/ReadMeImages/Chap7_2.PNG)
 
 Display on port 8000
-![](/ReadMeImages/Chap7.PNG)
+![](/ReadMeImages/Chap_7.PNG)
 
 ### Problems faced in this chapter
 -Setting up  environment.
