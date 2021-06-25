@@ -3,7 +3,7 @@
 /* eslint no-restricted-globals: "off" */
 db.issues.remove({});
 const issuesDB = [
- {
+  {
     id: 1,
     status: 'New',
     owner: 'Ravan',
@@ -11,9 +11,10 @@ const issuesDB = [
     created: new Date('2019-01-15'),
     due: undefined,
     title: 'Error in console when clicking Add',
- title: 'Error in console when clicking Add',
- },
- {
+    // eslint-disable-next-line no-dupe-keys
+    title: 'Error in console when clicking Add',
+  },
+  {
     id: 2,
     status: 'Assigned',
     owner: 'Eddie',
@@ -21,11 +22,11 @@ const issuesDB = [
     created: new Date('2019-01-16'),
     due: new Date('2019-02-01'),
     title: 'Missing bottom border on panel',
- },
+  },
 ];
 db.issues.insertMany(issuesDB);
 const count = db.issues.count();
-print('Inserted', count, 'issues');db.counters.remove({ _id: 'issues' });
+print('Inserted', count, 'issues'); db.counters.remove({ _id: 'issues' });
 db.counters.insert({ _id: 'issues', current: count });
 
 db.issues.createIndex({ id: 1 }, { unique: true });

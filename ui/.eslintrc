@@ -4,7 +4,9 @@
     "node": true
     },
     "rules": {
-    "no-console": "off"
+        "linebreak-style": 0,
+    "no-console": "off",
+    "eol-last": ["error", "never"]
     
 
     }

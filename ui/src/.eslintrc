@@ -4,6 +4,8 @@
     "browser": true
     },
     "rules": {
-    "react/prop-types": "off"
+        "linebreak-style": 0,
+    "react/prop-types": "off",
+    "eol-last": ["error", "never"]
     }
    }
