@@ -1,15 +1,16 @@
 /* eslint "react/react-in-jsx-scope": "off" */
 /* globals React ReactDOM */
 /* eslint "react/jsx-no-undef": "off" */
-/* eslint "no-alert": "off" */
+
+import graphQLFetch from './graphQLFetch.js';
 
 // eslint-disable-next-line react/prefer-stateless-function
-const dateRegex = new RegExp('^\\d\\d\\d\\d-\\d\\d-\\d\\d');
+// const dateRegex = new RegExp('^\\d\\d\\d\\d-\\d\\d-\\d\\d');
 
-function jsonDateReviver(key, value) {
+/* function jsonDateReviver(key, value) {
   if (dateRegex.test(value)) return new Date(value);
   return value;
-}
+} */
 // eslint-disable-next-line no-unused-vars
 const sampleIssue = {
   status: 'New',
@@ -27,9 +28,9 @@ class IssueFilter extends React.Component {
 }
 
 // eslint-disable-next-line no-empty-pattern
-function IssueTable({ }) {
+function IssueTable({ issues }) {
   // eslint-disable-next-line no-undef
-  const issueRows = props.issues.map(issue => (
+  const issueRows = issues.map(issue => (
     <IssueRow key={issue.id} issue={issue} />
   ));
   return (
@@ -158,7 +159,7 @@ function IssueRow({ issue }) {
   );
 }
 
-async function graphQLFetch(query, variables = {}) {
+/* async function graphQLFetch(query, variables = {}) {
   try {
     const response = await fetch(window.ENV.UI_API_ENDPOINT, {
       method: 'POST',
@@ -181,7 +182,7 @@ async function graphQLFetch(query, variables = {}) {
     alert(`Error in sending data to server: ${e.message}`);
     return null;
   }
-}
+} */
 
 const element = <IssueList />;
 ReactDOM.render(element, document.getElementById('content'));
