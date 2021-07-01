@@ -2,6 +2,18 @@
 
 This is my repository for the project described in the book Pro MERN Stack (2nd Ed) by Vasan Subramanian. This readme contains my jouney of learning MERN. I will describe my learnings through every chapter. I will also list down the difficultilies I have faced in very chapter. Finally, I will also put down the results I achieve.<br>
 
+## Chapter8
+
+Through this chapter I've learned about splitting the code into multiple files and using webpack. 
+
+### Chap8-Result SnapShot.
+
+![](/ReadMeImages/Chap8.PNG)
+
+
+### Problems faced in this chapter
+-Using webpack
+
 ## Chapter7
 
 Through this chapter I've learned about the environment setup and it's architecture. I've also learnt how to work on clean code using eslint.
