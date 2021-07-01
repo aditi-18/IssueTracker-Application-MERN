@@ -1,10 +1,17 @@
 /* eslint "react/react-in-jsx-scope": "off" */
-/* globals React ReactDOM */
+
 /* eslint "react/jsx-no-undef": "off" */
 
 // import graphQLFetch from './graphQLFetch.js';
 
+
+import 'babel-polyfill';
+import 'whatwg-fetch';
+import React from 'react';
+import ReactDOM from 'react-dom';
+
 import IssueList from './IssueList.jsx';
+
 
 /* const sampleIssue = {
   status: 'New',

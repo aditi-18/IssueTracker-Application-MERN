@@ -1,6 +1,7 @@
 /* eslint-disable no-unused-vars */
-/* globals React */
-/* eslint "react/jsx-no-undef": "off" */
+
+
+import React from 'react';
 
 import IssueTable from './IssueTable.jsx';
 import IssueAdd from './IssueAdd.jsx';
