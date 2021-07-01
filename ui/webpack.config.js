@@ -2,7 +2,7 @@ const path = require('path');
 
 module.exports = {
   mode: 'development',
-  entry: { app: './src/App.jsx' },
+  entry: { app: ['./src/App.jsx'] },
   output: {
     filename: '[name].bundle.js',
     // eslint-disable-next-line no-undef
