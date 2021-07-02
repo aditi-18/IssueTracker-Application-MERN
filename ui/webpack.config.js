@@ -7,6 +7,7 @@ module.exports = {
     filename: '[name].bundle.js',
     // eslint-disable-next-line no-undef
     path: path.resolve(__dirname, 'public'),
+    publicPath: '/',
   },
   module: {
     rules: [
