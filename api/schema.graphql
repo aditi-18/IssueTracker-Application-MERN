@@ -17,6 +17,7 @@ type Issue {
     effort: Int
     created: GraphQLDate!
     due: GraphQLDate
+    description: String
 }
 
 "Toned down Issue, used as inputs, without server generated values"
@@ -27,6 +28,7 @@ input IssueInputs {
     Owner: String
     effort: Int
     due: GraphQLDate
+    description: String
 }
 
 ### Top level declarations
@@ -34,6 +36,7 @@ input IssueInputs {
 type Query {
     about: String!
    issueList(status: StatusType): [Issue!]!
+   issue(id: Int!): Issue!
 }
 
 type Mutation {

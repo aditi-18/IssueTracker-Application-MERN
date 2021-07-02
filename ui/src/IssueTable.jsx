@@ -1,8 +1,9 @@
 import React from 'react';
 
-import { Link } from 'react-router-dom';
+import { Link, NavLink, withRouter } from 'react-router-dom';
 
-function IssueRow({ issue }) {
+const IssueRow = withRouter(({ issue, location: { search } }) => {
+  const selectLocation = { pathname: `/issues/${issue.id}`, search };
   return (
     <tr>
       <td>{issue.id}</td>
@@ -12,10 +13,15 @@ function IssueRow({ issue }) {
       <td>{issue.effort}</td>
       <td>{issue.due ? issue.due.toDateString() : ' '}</td>
       <td>{issue.title}</td>
-      <td><Link to={`/edit/${issue.id}`} style={{ color: 'white' }}>Edit</Link></td>
+      <td>
+        <Link to={`/edit/${issue.id}`} style={{ color: 'white' }}>Edit</Link>
+        {' | '}
+        <NavLink to={selectLocation} style={{ color: 'white' }}>Select</NavLink>
+      </td>
+
     </tr>
   );
-}
+});
 
 export default function IssueTable({ issues }) {
   // eslint-disable-next-line no-undef
