@@ -1,15 +1,16 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 import Contents from './Contents.jsx';
 
 function NavBar() {
   return (
     <div>
       <nav>
-        <a href="/" style={{ color: 'white' }}>Home</a>
+        <NavLink exact to="/" style={{ color: 'white' }}>Home</NavLink>
         {' | '}
-        <a href="/#/issues" style={{ color: 'white' }}>Issue List</a>
+        <NavLink to="/issues" style={{ color: 'white' }}>Issue List</NavLink>
         {' | '}
-        <a href="/#/report" style={{ color: 'white' }}>Report</a>
+        <NavLink to="/report" style={{ color: 'white' }}>Report</NavLink>
       </nav>
     </div>
   );
