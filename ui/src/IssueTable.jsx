@@ -10,7 +10,7 @@ function IssueRow({ issue }) {
       <td>{issue.effort}</td>
       <td>{issue.due ? issue.due.toDateString() : ' '}</td>
       <td>{issue.title}</td>
-      <td><a href={`/#/edit/${issue.id}`}>Edit</a></td>
+      <td><a href={`/#/edit/${issue.id}`} style={{ color: 'white' }}>Edit</a></td>
     </tr>
   );
 }

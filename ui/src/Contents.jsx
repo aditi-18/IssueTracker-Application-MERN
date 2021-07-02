@@ -2,6 +2,7 @@ import React from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
 import IssueList from './IssueList.jsx';
 import IssueReport from './IssueReport.jsx';
+// eslint-disable-next-line import/no-unresolved
 import IssueEdit from './IssueEdit.jsx';
 
 const NotFound = () => <h1>Page Not Found</h1>;
