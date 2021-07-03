@@ -7,7 +7,7 @@ This is my repository for the project described in the book Pro MERN Stack (2nd 
 Through this chapter I learned the concept of routing, or handling multiple pages that we need to display. I was keen on learning how to navigate between different views of the application.
 
 ### Chap9-Result SnapShot.
-Issuelist page witht he issue id in the url
+Issuelist page with the issue id in the url-
 ![](/ReadMeImages/chap9.PNG)
 Report page view
 ![](/ReadMeImages/chap9_2.PNG)
@@ -15,7 +15,7 @@ Drop down menu
 ![](/ReadMeImages/chap9_4.png)
 
 ### Problems faced in this chapter
--Understanding linking of multiplw files. 
+-Understanding linking of multiple files. 
 
 ## Chapter8
 
