@@ -4,13 +4,13 @@ This is my repository for the project described in the book Pro MERN Stack (2nd 
 
 ## Chapter9
 
-Through this chapter I learned the concept of routing, or handling multiple pages that we may need to display. I was keen on learning how to navigate between different views of the application.
+Through this chapter I learned the concept of routing, or handling multiple pages that we need to display. I was keen on learning how to navigate between different views of the application.
 
 ### Chap9-Result SnapShot.
 
 ![](/ReadMeImages/chap9.PNG)
 ![](/ReadMeImages/chap9_2.PNG)
-![](/ReadMeImages/chap9_4.PNG)
+![](/ReadMeImages/chap9_4.png)
 
 ### Problems faced in this chapter
 -Understanding linking of multiplw files. 
