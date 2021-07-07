@@ -6,6 +6,7 @@ const IssueRow = withRouter(({
   issue,
   location: { search },
   closeIssue,
+  deleteIssue,
   index,
 }) => {
   const selectLocation = { pathname: `/issues/${issue.id}`, search };
@@ -22,8 +23,11 @@ const IssueRow = withRouter(({
         <Link to={`/edit/${issue.id}`} style={{ color: 'white' }}>Edit</Link>
         {' | '}
         <NavLink to={selectLocation} style={{ color: 'white' }}>Select</NavLink>
-        <button type="button" className="try" id="try" onClick={() => { closeIssue(index); }}>
+        <button type="button" className="trial" id="trial" onClick={() => { closeIssue(index); }}>
           Close
+        </button>
+        <button type="button" className="trial" id="trial" onClick={() => { deleteIssue(index); }}>
+          Delete
         </button>
       </td>
 
@@ -31,7 +35,7 @@ const IssueRow = withRouter(({
   );
 });
 
-export default function IssueTable({ issues, closeIssue }) {
+export default function IssueTable({ issues, closeIssue, deleteIssue }) {
   // eslint-disable-next-line no-undef
   const issueRows = issues.map((issue, index) => (
     <IssueRow
@@ -39,7 +43,10 @@ export default function IssueTable({ issues, closeIssue }) {
       issue={issue}
       closeIssue={closeIssue}
       index={index}
+      deleteIssue={deleteIssue}
+      index={index}
     />
+
   ));
   return (
     <div>
