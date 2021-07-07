@@ -1,4 +1,4 @@
-/* eslint-disable import/no-unresolved */
+
 /* eslint-disable import/extensions */
 const fs = require('fs');
 require('dotenv').config();
@@ -17,6 +17,7 @@ const resolvers = {
   Mutation: {
     setAboutMessage: about.setMessage,
     issueAdd: issue.add,
+    issueUpdate: issue.update,
   },
   GraphQLDate,
 };

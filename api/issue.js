@@ -2,6 +2,19 @@ const { UserInputError } = require('apollo-server-express');
 // eslint-disable-next-line import/extensions
 const { getDb, getNextSequence } = require('./db.js');
 
+async function update(_, { id, changes }) {
+  const db = getDb();
+  if (changes.title || changes.status || changes.Owner) {
+    const issue = await db.collection('issues').findOne({ id });
+    Object.assign(issue, changes);
+    // eslint-disable-next-line no-use-before-define
+    validate(issue);
+  }
+  await db.collection('issues').updateOne({ id }, { $set: changes });
+  const savedIssue = await db.collection('issues').findOne({ id });
+  return savedIssue;
+}
+
 async function get(_, { id }) {
   const db = getDb();
   const issue = await db.collection('issues').findOne({ id });
@@ -27,7 +40,7 @@ function validate(issue) {
   if (issue.title.length < 3) {
     errors.push('Field "title" must be at least 3 characters long.');
   }
-  if (issue.status === 'Assigned' && !issue.owner) {
+  if (issue.status === 'Assigned' && !issue.Owner) {
     errors.push('Field "Owner" is required when status is "Assigned');
   }
   if (errors.length > 0) {
@@ -50,4 +63,9 @@ async function add(_, { issue }) {
   return savedIssue;
 }
 
-module.exports = { list, add, get };
+module.exports = {
+  list,
+  add,
+  get,
+  update,
+};
