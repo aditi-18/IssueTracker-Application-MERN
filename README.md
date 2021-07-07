@@ -8,7 +8,7 @@ Through this chapter I learned the concept of hard-coded filter to more flexible
 
 ### Chap9-Result SnapShot.
 
-![](/ReadMeImages/Chap10.PNG)
+![](/ReadMeImages/Chap_10.PNG)
 
 ![](/ReadMeImages/Chap10_1.PNG)
 
