@@ -2,6 +2,20 @@
 
 This is my repository for the project described in the book Pro MERN Stack (2nd Ed) by Vasan Subramanian. This readme contains my jouney of learning MERN. I will describe my learnings through every chapter. I will also list down the difficultilies I have faced in very chapter. Finally, I will also put down the results I achieve.<br>
 
+## Chapter10
+
+Through this chapter I learned the concept of hard-coded filter to more flexible with user input,API's and CRUD operations . I was keen on learning on how to update an API.
+
+### Chap9-Result SnapShot.
+
+![](/ReadMeImages/Chap10.PNG)
+
+![](/ReadMeImages/Chap10_1.PNG)
+
+### Problems faced in this chapter
+-Understanding object from the console. 
+
+
 ## Chapter9
 
 Through this chapter I learned the concept of routing, or handling multiple pages that we need to display. I was keen on learning how to navigate between different views of the application.
