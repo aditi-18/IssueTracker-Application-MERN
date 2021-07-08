@@ -2,11 +2,29 @@
 
 This is my repository for the project described in the book Pro MERN Stack (2nd Ed) by Vasan Subramanian. This readme contains my jouney of learning MERN. I will describe my learnings through every chapter. I will also list down the difficultilies I have faced in very chapter. Finally, I will also put down the results I achieve.<br>
 
+## Chapter11
+
+Through this chapter I learned the concept of bootstrap and React-Bootstrap . I was keen on learning to implement bootstrap on a MERN project.
+
+### Chap11-Result SnapShot.
+Main page view
+![](/ReadMeImages/Chap11_2.PNG)
+
+Edit form
+![](/ReadMeImages/Chap11_4.PNG)
+
+Modal issue dialogue box
+![](/ReadMeImages/Chap11_3.PNG)
+
+### Problems faced in this chapter
+-seeting up mklink in the ui directory.
+-Responsiveness.
+
 ## Chapter10
 
 Through this chapter I learned the concept of hard-coded filter to more flexible with user input, updating and deleting API, Edit page with a form and CRUD operations. I was keen on learning on how to update an API.
 
-### Chap9-Result SnapShot.
+### Chap10-Result SnapShot.
 
 ![](/ReadMeImages/Chap_10.PNG)
 

@@ -38,7 +38,7 @@ const IssueRow = withRouter(({
     <tr>
       <td>{issue.id}</td>
       <td>{issue.status}</td>
-      <td>{issue.owner}</td>
+      <td>{issue.Owner}</td>
       <td>{issue.created.toDateString()}</td>
       <td>{issue.effort}</td>
       <td>{issue.due ? issue.due.toDateString() : ''}</td>
