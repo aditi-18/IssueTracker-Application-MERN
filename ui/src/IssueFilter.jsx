@@ -100,7 +100,7 @@ class IssueFilter extends React.Component {
     const { status, changed } = this.state;
     const { effortMin, effortMax } = this.state;
     return (
-      <div>
+      <div className="filter" id="filter">
         Status:
         {' '}
         <select value={status} className="now1" id="now1" onChange={this.onChangeStatus}>

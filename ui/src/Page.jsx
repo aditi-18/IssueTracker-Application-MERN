@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-  Navbar, Nav, NavItem, NavDropdown,
+  Navbar, Nav, NavItem, NavDropdown, Grid,
   MenuItem, Glyphicon, Tooltip, OverlayTrigger,
 } from 'react-bootstrap';
 import { LinkContainer } from 'react-router-bootstrap';
@@ -13,7 +13,6 @@ function NavBar() {
         <Navbar.Brand>Issue Tracker</Navbar.Brand>
       </Navbar.Header>
       <Nav>
-  
         <LinkContainer exact to="/">
           <NavItem>Home</NavItem>
         </LinkContainer>
@@ -58,11 +57,14 @@ function Footer() {
     </small>
   );
 }
+
 export default function Page() {
   return (
     <div>
       <NavBar />
-      <Contents />
+      <Grid>
+        <Contents />
+      </Grid>
       <Footer />
     </div>
   );
