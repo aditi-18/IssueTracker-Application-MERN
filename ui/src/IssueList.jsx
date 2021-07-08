@@ -127,7 +127,7 @@ export default class IssueList extends React.Component {
     const { match } = this.props;
     return (
       <React.Fragment>
-        <h1>Issue Tracker</h1>
+
         <IssueFilter />
         <hr />
         <IssueTable

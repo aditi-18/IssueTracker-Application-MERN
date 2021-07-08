@@ -30,6 +30,7 @@ export default class IssueFilter extends React.Component {
 import React from 'react';
 import URLSearchParams from 'url-search-params';
 import { withRouter } from 'react-router-dom';
+import { Button } from 'react-bootstrap';
 
 class IssueFilter extends React.Component {
   constructor({ location: { search } }) {
@@ -128,9 +129,11 @@ class IssueFilter extends React.Component {
           onChange={this.onChangeEffortMax}
         />
         {' '}
-        <button type="button" id="now" className="now" onClick={this.applyFilter}>Apply</button>
+        <Button bsStyle="primary" className="now" type="button" onClick={this.applyFilter}>
+          Apply
+        </Button>
         {' '}
-        <button
+        <Button
           className="now"
           type="button"
           onClick={this.showOriginalFilter}
@@ -138,7 +141,7 @@ class IssueFilter extends React.Component {
         >
           Reset
 
-        </button>
+        </Button>
       </div>
     );
   }
