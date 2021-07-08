@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { LinkContainer } from 'react-router-bootstrap';
 import {
-  Col, Panel, Form, FormGroup, FormControl, ControlLabel,
+  Col, Panel, Form, FormGroup, FormControl, ControlLabel, Alert,
   ButtonToolbar, Button,
 } from 'react-bootstrap';
 import graphQLFetch from './graphQLFetch.js';
@@ -16,6 +16,7 @@ export default class IssueEdit extends React.Component {
     this.state = {
       issue: {},
       invalidFields: {},
+      showingValidation: false,
     };
     this.onValidityChange = this.onValidityChange.bind(this);
     this.onChange = this.onChange.bind(this);
@@ -53,6 +54,7 @@ export default class IssueEdit extends React.Component {
 
   async handleSubmit(e) {
     e.preventDefault();
+    this.showValidation();
     const { issue, invalidFields } = this.state;
     if (Object.keys(invalidFields).length !== 0) return;
     const query = `mutation issueUpdate(
@@ -95,6 +97,14 @@ export default class IssueEdit extends React.Component {
     this.setState({ issue: data ? data.issue : {}, invalidFields: {} });
   }
 
+  showValidation() {
+    this.setState({ showingValidation: true });
+  }
+
+  dismissValidation() {
+    this.setState({ showingValidation: false });
+  }
+
   render() {
     const { issue: { id } } = this.state;
     const { match: { params: { id: propsId } } } = this.props;
@@ -104,13 +114,13 @@ export default class IssueEdit extends React.Component {
       }
       return null;
     }
-    const { invalidFields } = this.state;
+    const { invalidFields, showingValidation } = this.state;
     let validationMessage;
-    if (Object.keys(invalidFields).length !== 0) {
+    if (Object.keys(invalidFields).length !== 0 && showingValidation) {
       validationMessage = (
-        <div className="error">
+        <Alert bsStyle="danger" onDismiss={this.dismissValidation}>
           Please correct invalid fields before submitting.
-        </div>
+        </Alert>
       );
     }
     const { issue: { title, status } } = this.state;
@@ -226,8 +236,11 @@ export default class IssueEdit extends React.Component {
                 </ButtonToolbar>
               </Col>
             </FormGroup>
+            <FormGroup>
+              <Col smOffset={3} sm={9}>{validationMessage}</Col>
+            </FormGroup>
           </Form>
-          {validationMessage}
+
         </Panel.Body>
         <Panel.Footer>
           <Link to={`/edit/${id - 1}`}>Prev</Link>
