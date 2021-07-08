@@ -16,7 +16,7 @@ const IssueRow = withRouter(({
   const selectLocation = { pathname: `/issues/${issue.id}`, search };
   const editToolTip = (
     <Tooltip id="close-tooltip" placement="top">Edit Issue</Tooltip>
-  )
+  );
   const closeTooltip = (
     <Tooltip id="close-tooltip" placement="top">Close Issue</Tooltip>
   );
