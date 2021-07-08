@@ -10,16 +10,17 @@
  <style>
  input.invalid {border-color: rgb(0, 255, 106);}
  div.error {color: red;}
-    table.bordered-table th, td {border: 2px solid yellowgreen; padding: 15px;padding-top: 15px;}
-    table.bordered-table {border-collapse: collapse;padding-top: 10%;}
+   
     h1{font-family:Castellar ;color:yellow;font-size:300%;text-align:center;font-style: unset;}
     div{font-family:Castellar;color:white;font-size:110%; padding-top: 20px;
   padding-bottom: 50px;}
     th {
   /*background-color: lightyellow;*/
   color: white;
- 
-
+}
+table.table-hover tr {cursor: pointer;}
+.table>tbody>tr.active>td, .table>tbody>tr.active>th, .table>tbody>tr>td.active, .table>tbody>tr>th.active, .table>tfoot>tr.active>td, .table>tfoot>tr.active>th, .table>tfoot>tr>td.active, .table>tfoot>tr>th.active, .table>thead>tr.active>td, .table>thead>tr.active>th, .table>thead>tr>td.active, .table>thead>tr>th.active {
+    background-color: #666699;
 }
 .panel {
     margin-bottom: 20px;
@@ -50,7 +51,7 @@ form {
   margin-top: 2%;
 margin-left: 30%;
 }
-a.active {background-color:palevioletred;}
+
 button{
   width: 55%;
   background-color: yellowgreen;
