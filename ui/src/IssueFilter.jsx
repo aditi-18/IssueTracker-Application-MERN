@@ -90,6 +90,7 @@ class IssueFilter extends React.Component {
             >
               <option value="">(All)</option>
               <option value="New">New</option>
+              <option value="Assigned">Assigned</option>
             </FormControl>
           </FormGroup>
         </Col>
