@@ -1,7 +1,8 @@
-
 import React from 'react';
 import PropTypes from 'prop-types';
-
+import {
+  Form, FormControl, FormGroup, ControlLabel, Button,
+} from 'react-bootstrap';
 
 export default class IssueAdd extends React.Component {
   constructor() {
@@ -13,10 +14,9 @@ export default class IssueAdd extends React.Component {
     e.preventDefault();
     const form = document.forms.issueAdd;
     const issue = {
-      Owner: form.Owner.value,
+      owner: form.owner.value,
       title: form.title.value,
       due: new Date(new Date().getTime() + 1000 * 60 * 60 * 24 * 10),
-
     };
     const { createIssue } = this.props;
     createIssue(issue);
@@ -25,16 +25,25 @@ export default class IssueAdd extends React.Component {
 
   render() {
     return (
-      <form name="issueAdd" onSubmit={this.handleSubmit}>
-        <input type="text" name="Owner" placeholder="Owner" />
-        <input type="text" name="title" placeholder="Title" />
-        <button type="submit">Add</button>
-      </form>
+      <Form inline name="issueAdd" onSubmit={this.handleSubmit}>
+        <FormGroup class ="trial" id="trial">
+          <ControlLabel><div class="old" id="old">Owner:</div></ControlLabel>
+          {' '}
+          <FormControl type="text" name="Owner" />
+        </FormGroup>
+        {' '}
+        <FormGroup>
+          <ControlLabel><div class="old" id="old">Title:</div></ControlLabel>
+          {' '}
+          <FormControl type="text" name="titlee" />
+        </FormGroup>
+        {' '}
+        <Button bsStyle="primary" type="submit" class="btnnew" id="btnew">Add</Button>
+      </Form>
     );
   }
 }
 
 IssueAdd.propTypes = {
-  // eslint-disable-next-line no-undef
   createIssue: PropTypes.func.isRequired,
 };
