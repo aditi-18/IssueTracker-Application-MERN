@@ -17,7 +17,7 @@ Modal issue dialogue box
 ![](/ReadMeImages/Chap11_3.PNG)
 
 ### Problems faced in this chapter
--seeting up mklink in the ui directory.
+-Setting up mklink in the ui directory.
 -Responsiveness.
 
 ## Chapter10
