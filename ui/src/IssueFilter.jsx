@@ -1,36 +1,11 @@
-
-/* eslint "react/prefer-stateless-function": "off" */
-
-/* eslint "react/prefer-stateless-function": "off" */
-/* import React from 'react';
-
-import { Link } from 'react-router-dom';
-
-export default class IssueFilter extends React.Component {
-  render() {
-    return (
-      <div>
-        <Link to="/issues" style={{ color: 'white' }}>All Issues</Link>
-        {' | '}
-        <Link to={{ pathname: '/issues', search: '?status=New' }} style={{ color: 'white' }}>
-          New Issues
-        </Link>
-        {' | '}
-        <Link to={{ pathname: '/issues', search: '?status=Assigned' }} style={{ color: 'white' }}>
-          Assigned Issues
-        </Link>
-      </div>
-    );
-  }
-} */
-
-/** *** */
-
-
 import React from 'react';
 import URLSearchParams from 'url-search-params';
 import { withRouter } from 'react-router-dom';
-import { Button } from 'react-bootstrap';
+import {
+  ButtonToolbar, Button, FormGroup, FormControl, ControlLabel, InputGroup,
+  Row, Col,
+} from 'react-bootstrap';
+/* eslint "react/prefer-stateless-function": "off" */
 
 class IssueFilter extends React.Component {
   constructor({ location: { search } }) {
@@ -43,10 +18,10 @@ class IssueFilter extends React.Component {
       changed: false,
     };
     this.onChangeStatus = this.onChangeStatus.bind(this);
-    this.onChangeEffortMin = this.onChangeEffortMin.bind(this);
-    this.onChangeEffortMax = this.onChangeEffortMax.bind(this);
     this.applyFilter = this.applyFilter.bind(this);
     this.showOriginalFilter = this.showOriginalFilter.bind(this);
+    this.onChangeEffortMin = this.onChangeEffortMin.bind(this);
+    this.onChangeEffortMax = this.onChangeEffortMax.bind(this);
   }
 
   componentDidUpdate(prevProps) {
@@ -80,6 +55,8 @@ class IssueFilter extends React.Component {
     const params = new URLSearchParams(search);
     this.setState({
       status: params.get('status') || '',
+      effortMin: params.get('effortMin') || '',
+      effortMax: params.get('effortMax') || '',
       changed: false,
     });
   }
@@ -92,6 +69,7 @@ class IssueFilter extends React.Component {
     if (status) params.set('status', status);
     if (effortMin) params.set('effortMin', effortMin);
     if (effortMax) params.set('effortMax', effortMax);
+
     const search = params.toString() ? `?${params.toString()}` : '';
     history.push({ pathname: '/issues', search });
   }
@@ -100,50 +78,51 @@ class IssueFilter extends React.Component {
     const { status, changed } = this.state;
     const { effortMin, effortMax } = this.state;
     return (
-      <div className="filter" id="filter">
-        Status:
-        {' '}
-        <select value={status} className="now1" id="now1" onChange={this.onChangeStatus}>
-          <option value="">(All)</option>
-          <option value="New">New</option>
-          <option value="Assigned">Assigned</option>
-          <option value="Fixed">Fixed</option>
-          <option value="Closed">Closed</option>
-        </select>
-        {' '}
-        Effort between:
-        {' '}
-        <input
-          id="now2"
-          className="now2"
-          size={5}
-          value={effortMin}
-          onChange={this.onChangeEffortMin}
-        />
-        {' - '}
-        <input
-          id="now2"
-          className="now2"
-          size={5}
-          value={effortMax}
-          onChange={this.onChangeEffortMax}
-        />
-        {' '}
-        <Button bsStyle="primary" className="now" type="button" onClick={this.applyFilter}>
-          Apply
-        </Button>
-        {' '}
-        <Button
-          className="now"
-          type="button"
-          onClick={this.showOriginalFilter}
-          disabled={!changed}
-        >
-          Reset
+      <Row class="word" id="word">
 
-        </Button>
-      </div>
+        <Col xs={6} sm={4} md={3} lg={2}>
+          <FormGroup>
+            <ControlLabel>Status:</ControlLabel>
+            <FormControl
+              componentClass="select"
+              value={status}
+              onChange={this.onChangeStatus}
+            >
+              <option value="">(All)</option>
+              <option value="New">New</option>
+            </FormControl>
+          </FormGroup>
+        </Col>
+        <Col xs={6} sm={4} md={3} lg={2}>
+          <FormGroup>
+            <ControlLabel>Effort between:</ControlLabel>
+            <InputGroup>
+              <FormControl value={effortMin} onChange={this.onChangeEffortMin} />
+              <InputGroup.Addon>-</InputGroup.Addon>
+              <FormControl value={effortMax} onChange={this.onChangeEffortMax} />
+            </InputGroup>
+          </FormGroup>
+        </Col>
+        <Col xs={6} sm={4} md={3} lg={2}>
+          <FormGroup>
+            <ControlLabel>&nbsp;</ControlLabel>
+            <ButtonToolbar>
+              <Button bsStyle="primary" type="button" onClick={this.applyFilter}>
+                Apply
+              </Button>
+              <Button
+                type="button"
+                onClick={this.showOriginalFilter}
+                disabled={!changed}
+              >
+                Reset
+              </Button>
+            </ButtonToolbar>
+          </FormGroup>
+        </Col>
+      </Row>
     );
   }
 }
+
 export default withRouter(IssueFilter);
