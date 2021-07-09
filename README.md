@@ -8,13 +8,19 @@ Through this chapter I learned the concept of bootstrap and React-Bootstrap . I 
 
 ### Chap11-Result SnapShot.
 Main page view
-![](/ReadMeImages/Chap11_2.PNG)
+![](/ReadMeImages/Chap11_ 1.PNG)
+
+Filter panel
+![](/ReadMeImages/Chap11_ 2.PNG)
 
 Edit form
 ![](/ReadMeImages/Chap11_4.PNG)
 
 Modal issue dialogue box
 ![](/ReadMeImages/Chap11_3.PNG)
+
+Alert
+![](/ReadMeImages/Chap11_5.PNG)
 
 ### Problems faced in this chapter
 -Setting up mklink in the ui directory.

@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-no-target-blank */
 /* eslint-disable no-unused-vars */
 import React from 'react';
 import {
@@ -42,10 +43,10 @@ function Footer() {
   return (
     <small>
       <p className="text-center">
-        <h3>Created by Aditi Shrivastava. Full source code available at-</h3>
+        <h6>Created by Aditi Shrivastava. Full source code available at-</h6>
         {' '}
         <a href="https://github.ccs.neu.edu/NEU-CS5610-SU21/Aditi-Book" target="_blank">
-          <h3>GitHub repository</h3>
+          <h6>GitHub repository</h6>
         </a>
       </p>
     </small>
