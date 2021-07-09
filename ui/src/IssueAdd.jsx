@@ -14,26 +14,26 @@ export default class IssueAdd extends React.Component {
     e.preventDefault();
     const form = document.forms.issueAdd;
     const issue = {
-      owner: form.owner.value,
+      Owner: form.Owner.value,
       title: form.title.value,
       due: new Date(new Date().getTime() + 1000 * 60 * 60 * 24 * 10),
     };
     const { createIssue } = this.props;
     createIssue(issue);
-    form.owner.value = ''; form.title.value = '';
+    form.Owner.value = ''; form.title.value = '';
   }
 
   render() {
     return (
       <Form inline name="issueAdd" onSubmit={this.handleSubmit}>
-        <FormGroup class ="trial" id="trial">
-          <ControlLabel><div class="old" id="old">Owner:</div></ControlLabel>
+        <FormGroup class="trial" id="trial">
+          <ControlLabel><div className="old" id="old">Owner:</div></ControlLabel>
           {' '}
           <FormControl type="text" name="Owner" />
         </FormGroup>
         {' '}
         <FormGroup>
-          <ControlLabel><div class="old" id="old">Title:</div></ControlLabel>
+          <ControlLabel><div className="old" id="old">Title:</div></ControlLabel>
           {' '}
           <FormControl type="text" name="titlee" />
         </FormGroup>

@@ -42,10 +42,10 @@ function Footer() {
   return (
     <small>
       <p className="text-center">
-        Full source code available at this
+        <h3>Created by Aditi Shrivastava. Full source code available at-</h3>
         {' '}
-        <a href="https://github.com/vasansr/pro-mern-stack-2">
-          GitHub repository
+        <a href="https://github.ccs.neu.edu/NEU-CS5610-SU21/Aditi-Book" target="_blank">
+          <h3>GitHub repository</h3>
         </a>
       </p>
     </small>
