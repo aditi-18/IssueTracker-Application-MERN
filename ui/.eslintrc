@@ -1,13 +1,4 @@
 {
     "extends": "airbnb-base",
-    "env": {
-    "node": true
-    },
-    "rules": {
-        "linebreak-style": 0,
-    "no-console": "off",
-    "eol-last": ["error", "never"]
     
-
-    }
    }

@@ -1,9 +1,9 @@
 /* eslint-disable import/extensions */
-
 require('dotenv').config();
 const path = require('path');
 const express = require('express');
 const proxy = require('http-proxy-middleware');
+
 
 const app = express();
 
@@ -13,9 +13,9 @@ if (enableHMR && (process.env.NODE_ENV !== 'production')) {
   /* eslint "global-require": "off" */
   /* eslint "import/no-extraneous-dependencies": "off" */
   const webpack = require('webpack');
+  const config = require('../webpack.config.js');
   const devMiddleware = require('webpack-dev-middleware');
   const hotMiddleware = require('webpack-hot-middleware');
-  const config = require('./webpack.config.js');
   config.entry.app.push('webpack-hot-middleware/client');
   config.plugins = config.plugins || [];
   config.plugins.push(new webpack.HotModuleReplacementPlugin());
