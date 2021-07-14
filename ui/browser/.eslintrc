@@ -4,7 +4,8 @@
     },
     "rules": {
     "import/extensions": [ "error", "always", { "ignorePackages": true } ],
-    "react/prop-types": "off"
+    "react/prop-types": "off",
+    "linebreak-style": 0
     }
    }
    
