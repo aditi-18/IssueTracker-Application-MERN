@@ -1,37 +1,22 @@
+import 'babel-polyfill';
 import React from 'react';
-import store from './store.js';
-import graphQLFetch from './graphQLFetch.js';
+import ReactDOM from 'react-dom';
+import { BrowserRouter as Router } from 'react-router-dom';
 
-export default class About extends React.Component {
-  static async fetchData() {
-    const data = await graphQLFetch('query {about}');
-    return data;
-  }
+import Page from '../src/Page.jsx';
+import store from '../src/store.js';
 
-  constructor(props) {
-    super(props);
-    const apiAbout = store.initialData ? store.initialData.about : null;
-    this.state = { apiAbout };
-  }
+// eslint-disable-next-line no-underscore-dangle
+store.initialData = window.__INITIAL_DATA__;
 
-  async componentDidMount() {
-    const { apiAbout } = this.state;
-    if (apiAbout == null) {
-      const data = await About.fetchData();
-      this.setState({ apiAbout: data.about });
-    }
-  }
+const element = (
+  <Router>
+    <Page />
+  </Router>
+);
 
-  render() {
-    const { apiAbout } = this.state;
-    return (
-      <div className="text-center">
-        <h3>Issue Tracker version 0.9</h3>
-        <h4>
-          {apiAbout}
-        </h4>
-      </div>
-    );
-  }
+ReactDOM.hydrate(element, document.getElementById('content'));
+
+if (module.hot) {
+  module.hot.accept();
 }
-{"mode":"full","isActive":false}
