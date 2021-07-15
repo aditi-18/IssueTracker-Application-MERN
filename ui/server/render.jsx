@@ -4,10 +4,10 @@ import Page from '../src/Page.jsx';
 import template from './template.js';
 import graphQLFetch from '../src/graphQLFetch.js';
 import store from '../src/store.js';
+import About from '../src/About.jsx';
 
 async function render(req, res) {
-  const initialData = await graphQLFetch('query{about}');
-  store.initialData = initialData;
+  const resultData = About.fetchData();
   const element = (
     <StaticRouter location={req.url} context={{}}>
     <Page />
