@@ -10,7 +10,7 @@ import 'whatwg-fetch';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { HashRouter as Router } from 'react-router-dom';
-
+import store from '../src/store.js';
 import Page from '../src/Page.jsx';
 
 
@@ -25,7 +25,8 @@ import Page from '../src/Page.jsx';
 
 // eslint-disable-next-line no-empty-pattern
 
-
+// eslint-disable-next-line no-underscore-dangle
+store.initialData = window.__INITIAL_DATA__;
 const element = (
   <Router>
     <Page />
