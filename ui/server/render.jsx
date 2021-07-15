@@ -2,14 +2,18 @@ import React from 'react';
 import ReactDOMServer from 'react-dom/server';
 import Page from '../src/Page.jsx';
 import template from './template.js';
+import graphQLFetch from '../src/graphQLFetch.js';
+import store from '../src/store.js';
 
-function render(req, res) {
+async function render(req, res) {
+  const initialData = await graphQLFetch('query{about}');
+  store.initialData = initialData;
   const element = (
     <StaticRouter location={req.url} context={{}}>
     <Page />
     </StaticRouter>
     );
     const body = ReactDOMServer.renderToString(element);
-  res.send(template(body));
+  res.send(template(body))  ;
 }
 export default render;
