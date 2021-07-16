@@ -147,7 +147,7 @@ import store from './store.js';
             <Panel.Title toggle>Filter</Panel.Title>
           </Panel.Heading>
           <Panel.Body collapsible>
-            <IssueFilter />
+            <IssueFilter urlBase="/issues" />
           </Panel.Body>
         </Panel>
         <IssueTable
