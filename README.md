@@ -2,6 +2,21 @@
 
 This is my repository for the project described in the book Pro MERN Stack (2nd Ed) by Vasan Subramanian. This readme contains my jouney of learning MERN. I will describe my learnings through every chapter. I will also list down the difficultilies I have faced in very chapter. Finally, I will also put down the results I achieve.<br>
 
+## Chapter12
+
+Through this chapter I learned the concept of basic server rendering and fteching  data from API.
+
+### Chap11-Result SnapShot.
+Main page view
+![](/ReadMeImages/Chap12_1.PNG)
+
+View Page source 
+![](/ReadMeImages/Chap12_2.PNG)
+
+### Problems faced in this chapter
+-Making changes in IssueList and render.js.
+-Understanding server connectivity.
+
 ## Chapter11
 
 Through this chapter I learned the concept of bootstrap and React-Bootstrap . I was keen on learning to implement bootstrap on a MERN project.
