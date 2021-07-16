@@ -13,12 +13,13 @@ export default function template(body, data) {
   <style>
     table.table-hover tr {cursor: pointer;}
     .panel-title a {display: block; width: 100%; cursor: pointer;}
+    background-image: url('new.jpg')
   </style>
 </head>
 
 <body>
 <!-- Page generated from template. -->
-<div id="content">${body}</div>
+<div id="content" background-image: url('new.jpg')>${body}</div>
 
 <script>window.__INITIAL_DATA__ = ${serialize(data)}</script>
 <script src="/env.js"></script>

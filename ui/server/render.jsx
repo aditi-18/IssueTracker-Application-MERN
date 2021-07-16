@@ -34,7 +34,6 @@ async function render(req, res) {
   } else {
     res.send(template(body, initialData));
   }
-
   res.send(template(body, initialData));
 }
 
