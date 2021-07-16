@@ -6,7 +6,7 @@ This is my repository for the project described in the book Pro MERN Stack (2nd 
 
 Through this chapter I learned the concept of basic server rendering and fteching  data from API.
 
-### Chap11-Result SnapShot.
+### Chap12-Result SnapShot.
 Main page view
 ![](/ReadMeImages/Chap12_1.PNG)
 
