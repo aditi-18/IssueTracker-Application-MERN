@@ -22,7 +22,7 @@
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "cd51f72dffb512b5676f";
+/******/ 	var hotCurrentHash = "fb546e54135c468d669f";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -2888,10 +2888,10 @@ __webpack_require__.r(__webpack_exports__);
 
 
 const routes = [{
-  path: '/issues',
+  path: '/issues/:id?',
   component: _IssueList_jsx__WEBPACK_IMPORTED_MODULE_0__["default"]
 }, {
-  path: '/edit/:id?',
+  path: '/edit/:id',
   component: _IssueEdit_jsx__WEBPACK_IMPORTED_MODULE_2__["default"]
 }, {
   path: '/report',
