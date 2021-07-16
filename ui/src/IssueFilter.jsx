@@ -78,7 +78,7 @@ class IssueFilter extends React.Component {
     const { status, changed } = this.state;
     const { effortMin, effortMax } = this.state;
     return (
-      <Row class="word" id="word">
+      <Row className="word" id="word">
 
         <Col xs={6} sm={4} md={3} lg={2}>
           <FormGroup>

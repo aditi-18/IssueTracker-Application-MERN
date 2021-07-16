@@ -23,7 +23,8 @@ export default class IssueEdit extends React.Component {
     }`;
 
     const { params: { id } } = match;
-    const result = await graphQLFetch(query, { id }, showError);
+    const result = await graphQLFetch(query, {id: parseInt(id, 10)
+  }, showError);
     return result;
   }
 
@@ -96,7 +97,8 @@ export default class IssueEdit extends React.Component {
     }`;
 
     const { id, created, ...changes } = issue;
-    const data = await graphQLFetch(query, { changes, id });
+    const data = await graphQLFetch(query, { changes, id: parseInt(id, 10)
+    });
     if (data) {
       this.setState({ issue: data.issueUpdate });
       this.showSuccess('Updated issue successfully');

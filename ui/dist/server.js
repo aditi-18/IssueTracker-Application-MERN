@@ -22,7 +22,7 @@
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "a30f3bfe2a5c19db7cd9";
+/******/ 	var hotCurrentHash = "cd51f72dffb512b5676f";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -1597,7 +1597,7 @@ class IssueEdit extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
       }
     } = match;
     const result = await Object(_graphQLFetch_js__WEBPACK_IMPORTED_MODULE_6__["default"])(query, {
-      id
+      id: parseInt(id, 10)
     }, showError);
     return result;
   }
@@ -1705,7 +1705,7 @@ class IssueEdit extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
     } = issue;
     const data = await Object(_graphQLFetch_js__WEBPACK_IMPORTED_MODULE_6__["default"])(query, {
       changes,
-      id
+      id: parseInt(id, 10)
     });
 
     if (data) {
@@ -2075,7 +2075,7 @@ class IssueFilter extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component
       effortMax
     } = this.state;
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_3__["Row"], {
-      class: "word",
+      className: "word",
       id: "word"
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_3__["Col"], {
       xs: 6,
