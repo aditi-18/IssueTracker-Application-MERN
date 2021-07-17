@@ -2,12 +2,13 @@
 /* eslint-disable no-unused-vars */
 import React from 'react';
 import {
-  Navbar, Nav, NavItem, NavDropdown, Grid,
+  Navbar, Nav, NavItem, NavDropdown, Grid,Col,
   MenuItem, Glyphicon, Tooltip, OverlayTrigger,
 } from 'react-bootstrap';
 import { LinkContainer } from 'react-router-bootstrap';
 import Contents from './Contents.jsx';
 import IssueAddNavItem from './IssueAddNavItem.jsx';
+import Search from './Search.jsx';
 
 function NavBar() {
   return (
@@ -26,6 +27,11 @@ function NavBar() {
           <NavItem>Report</NavItem>
         </LinkContainer>
       </Nav>
+      <Col sm={5}>
+ <Navbar.Form>
+ <Search />
+ </Navbar.Form>
+ </Col>
       <Nav pullRight>
         <IssueAddNavItem />
         <NavDropdown
