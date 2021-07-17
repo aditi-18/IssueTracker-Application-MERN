@@ -22,7 +22,7 @@
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "9b3995206dd9643a1888";
+/******/ 	var hotCurrentHash = "4d4b04acd32a6857868b";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -1032,8 +1032,6 @@ async function render(req, res) {
   } else {
     res.send(Object(_template_js__WEBPACK_IMPORTED_MODULE_4__["default"])(body, initialData));
   }
-
-  res.send(Object(_template_js__WEBPACK_IMPORTED_MODULE_4__["default"])(body, initialData));
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (render);
@@ -1679,13 +1677,13 @@ class IssueEdit extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
     const data = await Object(_graphQLFetch_js__WEBPACK_IMPORTED_MODULE_6__["default"])(query, {
       changes,
       id: parseInt(id, 10)
-    });
+    }, showError);
 
     if (data) {
       this.setState({
         issue: data.issueUpdate
       });
-      this.showSuccess('Updated issue successfully');
+      showSuccess('Updated issue successfully');
     }
   }
 
@@ -2140,9 +2138,11 @@ class IssueList extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
         effortMin: $effortMin
         effortMax: $effortMax
       ) {
+        issues{
         id title status Owner
         created effort due
       }
+    }
       issue(id: $selectedId) @include (if : $hasSelection) {
         id description
       }
@@ -2153,7 +2153,7 @@ class IssueList extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
 
   constructor() {
     super();
-    const issues = _store_js__WEBPACK_IMPORTED_MODULE_8__["default"].initialData ? _store_js__WEBPACK_IMPORTED_MODULE_8__["default"].initialData.issueList : null;
+    const issues = _store_js__WEBPACK_IMPORTED_MODULE_8__["default"].initialData ? _store_js__WEBPACK_IMPORTED_MODULE_8__["default"].initialData.issueList.issues : null;
     const selectedIssue = _store_js__WEBPACK_IMPORTED_MODULE_8__["default"].initialData ? _store_js__WEBPACK_IMPORTED_MODULE_8__["default"].initialData.issue : null;
     delete _store_js__WEBPACK_IMPORTED_MODULE_8__["default"].initialData;
     this.state = {
@@ -2210,7 +2210,7 @@ class IssueList extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
 
     if (data) {
       this.setState({
-        issues: data.issueList,
+        issues: data.issueList.issues,
         selectedIssue: data.issue
       });
     }

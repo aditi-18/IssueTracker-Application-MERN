@@ -93,10 +93,10 @@ import TextInput from './TextInput.jsx';
     const { id, created, ...changes } = issue;
     const { showSuccess, showError } = this.props;
     const data = await graphQLFetch(query, { changes, id: parseInt(id, 10)
-    });
+    },showError);
     if (data) {
       this.setState({ issue: data.issueUpdate });
-      this.showSuccess('Updated issue successfully');
+      showSuccess('Updated issue successfully');
     }
   }
 

@@ -39,9 +39,11 @@ import store from './store.js';
         effortMin: $effortMin
         effortMax: $effortMax
       ) {
+        issues{
         id title status Owner
         created effort due
       }
+    }
       issue(id: $selectedId) @include (if : $hasSelection) {
         id description
       }
@@ -53,7 +55,7 @@ import store from './store.js';
 
   constructor() {
     super();
-    const issues = store.initialData ? store.initialData.issueList : null;
+    const issues = store.initialData ? store.initialData.issueList.issues : null;
     const selectedIssue = store.initialData
       ? store.initialData.issue
       : null;
@@ -86,7 +88,7 @@ import store from './store.js';
     const { location: { search }, match, showError } = this.props;
     const data = await IssueList.fetchData(match, search, this.showError);
     if (data) {
-      this.setState({ issues: data.issueList, selectedIssue: data.issue });
+      this.setState({ issues: data.issueList.issues,selectedIssue: data.issue});
     }
   }
 
