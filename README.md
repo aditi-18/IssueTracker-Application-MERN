@@ -6,9 +6,9 @@ This is my repository for the project described in the book Pro MERN Stack (2nd 
 
 Through this chapter I learned the concept of befactor the UI code to reuse common code across many components,Pagination and adding search bar.
 
-### Chap12-Result SnapShot.
+### Chap13-Result SnapShot.
 Main page view with search bar and pagination.
-![](/ReadMeImages/Chap13_1.PNG)
+![](/ReadMeImages/Chap13_1.png)
 
 report page
 ![](/ReadMeImages/Chap13_2.PNG)
