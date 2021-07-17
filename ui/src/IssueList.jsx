@@ -45,7 +45,7 @@ class IssueList extends React.Component {
       vars.selectedId = idInt;
     }
 
-    let page = parseInt(params.get('page'), 10);
+    let page = parseInt(params.get('page'), 5);
     if (Number.isNaN(page)) page = 1;
     vars.page = page;
 

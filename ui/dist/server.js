@@ -22,7 +22,7 @@
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "6b9b16c5e375488f222f";
+/******/ 	var hotCurrentHash = "e78b52c440ba6b98cd3b";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -2148,7 +2148,7 @@ class IssueList extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
       vars.selectedId = idInt;
     }
 
-    let page = parseInt(params.get('page'), 10);
+    let page = parseInt(params.get('page'), 5);
     if (Number.isNaN(page)) page = 1;
     vars.page = page;
     const query = `query issueList(
