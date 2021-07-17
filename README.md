@@ -8,7 +8,7 @@ Through this chapter I learned the concept of befactor the UI code to reuse comm
 
 ### Chap13-Result SnapShot.
 Main page view with search bar and pagination.
-![](/ReadMeImages/Chap13.PNG)
+![](/ReadMeImages/Chap13.png)
 
 Report page
 ![](/ReadMeImages/Chap13_2.PNG)
