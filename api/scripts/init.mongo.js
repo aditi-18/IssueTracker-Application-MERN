@@ -8,7 +8,7 @@ const issuesDB = [
 
     id: 1,
     status: 'New',
-    owner: 'Ravan',
+    wner: 'Ravan',
     effort: 5,
     created: new Date('2019-01-15'),
     due: undefined,
@@ -28,7 +28,7 @@ const issuesDB = [
 
     id: 2,
     status: 'Assigned',
-    owner: 'Eddie',
+    Owner: 'Eddie',
     effort: 14,
     created: new Date('2019-01-16'),
     due: new Date('2019-02-01'),
@@ -44,6 +44,7 @@ db.counters.insert({ _id: 'issues', current: count });
 
 db.issues.createIndex({ id: 1 }, { unique: true });
 db.issues.createIndex({ status: 1 });
-db.issues.createIndex({ owner: 1 });
+db.issues.createIndex({ Owner: 1 });
 db.issues.createIndex({ created: 1 });
+db.issues.createIndex({ title: 'text', description: 'text' });
 db.deleted_issues.createIndex({ id: 1 }, { unique: true });
