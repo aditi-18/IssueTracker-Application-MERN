@@ -2,6 +2,21 @@
 
 This is my repository for the project described in the book Pro MERN Stack (2nd Ed) by Vasan Subramanian. This readme contains my jouney of learning MERN. I will describe my learnings through every chapter. I will also list down the difficultilies I have faced in very chapter. Finally, I will also put down the results I achieve.<br>
 
+## Chapter13
+
+Through this chapter I learned the concept of befactor the UI code to reuse common code across many components,Pagination and adding search bar.
+
+### Chap12-Result SnapShot.
+Main page view with search bar and pagination.
+![](/ReadMeImages/Chap13_1.PNG)
+
+report page
+![](/ReadMeImages/Chap13_2.PNG)
+
+### Problems faced in this chapter
+-Making changes in IssueList.
+-Understanding how pagination works.
+
 ## Chapter12
 
 Through this chapter I learned the concept of basic server rendering and fteching  data from API.
