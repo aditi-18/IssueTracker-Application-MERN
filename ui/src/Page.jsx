@@ -1,6 +1,7 @@
 /* eslint-disable react/jsx-no-target-blank */
 /* eslint-disable no-unused-vars */
 import React from 'react';
+import SignInNavItem from './SignInNavItem.jsx';
 import {
   Navbar, Nav, NavItem, NavDropdown, Grid,Col,
   MenuItem, Glyphicon, Tooltip, OverlayTrigger,
@@ -34,6 +35,7 @@ function NavBar() {
  </Col>
       <Nav pullRight>
         <IssueAddNavItem />
+        <SignInNavItem />
         <NavDropdown
           id="user-dropdown"
           title={<Glyphicon glyph="option-vertical" />}
