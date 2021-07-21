@@ -1,19 +1,19 @@
-/* eslint-disable react/jsx-no-target-blank */
-/* eslint-disable no-unused-vars */
 import React from 'react';
-import SignInNavItem from './SignInNavItem.jsx';
 import {
-  Navbar, Nav, NavItem, NavDropdown, Grid,Col,
-  MenuItem, Glyphicon, Tooltip, OverlayTrigger,
+  Navbar, Nav, NavItem, NavDropdown,
+  MenuItem, Glyphicon,
+  Grid, Col,
 } from 'react-bootstrap';
 import { LinkContainer } from 'react-router-bootstrap';
+
 import Contents from './Contents.jsx';
 import IssueAddNavItem from './IssueAddNavItem.jsx';
+import SignInNavItem from './SignInNavItem.jsx';
 import Search from './Search.jsx';
 
 function NavBar() {
   return (
-    <Navbar>
+    <Navbar fluid>
       <Navbar.Header>
         <Navbar.Brand>Issue Tracker</Navbar.Brand>
       </Navbar.Header>
@@ -29,10 +29,10 @@ function NavBar() {
         </LinkContainer>
       </Nav>
       <Col sm={5}>
- <Navbar.Form>
- <Search />
- </Navbar.Form>
- </Col>
+        <Navbar.Form>
+          <Search />
+        </Navbar.Form>
+      </Col>
       <Nav pullRight>
         <IssueAddNavItem />
         <SignInNavItem />
@@ -49,14 +49,16 @@ function NavBar() {
     </Navbar>
   );
 }
+
 function Footer() {
   return (
     <small>
+      <hr />
       <p className="text-center">
-        <h6>Created by Aditi Shrivastava. Full source code available at-</h6>
+        Full source code available at this
         {' '}
-        <a href="https://github.ccs.neu.edu/NEU-CS5610-SU21/Aditi-Book" target="_blank">
-          <h6>GitHub repository</h6>
+        <a href="https://github.com/vasansr/pro-mern-stack-2">
+          GitHub repository
         </a>
       </p>
     </small>
@@ -67,7 +69,7 @@ export default function Page() {
   return (
     <div>
       <NavBar />
-      <Grid>
+      <Grid fluid>
         <Contents />
       </Grid>
       <Footer />
