@@ -5,6 +5,9 @@ const { connectToDb } = require('./db.js');
 const { installHandler } = require('./api_handler.js');
 
 const app = express();
+const auth = require('./auth.js');
+
+app.use('/auth', auth.routes);
 
 installHandler(app);
 
