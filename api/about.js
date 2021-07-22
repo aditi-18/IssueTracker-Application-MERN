@@ -1,3 +1,6 @@
+/* eslint-disable import/extensions */
+import { mustBeSignedIn } from './auth.js';
+
 let aboutMessage = 'Issue Tracker API v1.0';
 
 function setMessage(_, { message }) {
@@ -9,4 +12,4 @@ function getMessage() {
   return aboutMessage;
 }
 
-module.exports = { getMessage, setMessage };
+export default { getMessage, setMessage: mustBeSignedIn(setMessage) };
