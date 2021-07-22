@@ -19,7 +19,7 @@ class SignInNavItem extends React.Component {
     this.signIn = this.signIn.bind(this);
   }
 
-  componentDidMount() {
+  async componentDidMount() {
     const clientId = window.ENV.GOOGLE_CLIENT_ID;
     if (!clientId) return;
     window.gapi.load('auth2', () => {
@@ -29,6 +29,18 @@ class SignInNavItem extends React.Component {
         });
       }
     });
+    await this.loadData();
+  }
+
+  async loadData() {
+    const apiEndpoint = window.ENV.UI_AUTH_ENDPOINT;
+    const response = await fetch(`${apiEndpoint}/user`, {
+      method: 'POST',
+    });
+    const body = await response.text();
+    const result = JSON.parse(body);
+    const { signedIn, givenName } = result;
+    this.setState({ user: { signedIn, givenName } });
   }
 
   async signIn() {
@@ -105,7 +117,7 @@ class SignInNavItem extends React.Component {
               bsStyle="primary"
               onClick={this.signIn}
             >
-              <img src="https://developers.google.com/identity/images/btn_google_signin_light_normal_web.png" alt="Sign In" />
+              <img src="https://goo.gl/4yjp6B" alt="Sign In" />
             </Button>
           </Modal.Body>
           <Modal.Footer>
