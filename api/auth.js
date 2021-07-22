@@ -17,6 +17,7 @@ if (!JWT_SECRET) {
 const routes = new Router();
 routes.use(bodyParser.json());
 
+
 function getUser(req) {
   const token = req.cookies.jwt;
   if (!token) return { signedIn: false };
@@ -62,6 +63,11 @@ routes.post('/signin', async (req, res) => {
 
 routes.post('/user', (req, res) => {
   res.json(getUser(req));
+});
+
+routes.post('/signout', async (req, res) => {
+  res.clearCookie('jwt');
+  res.json({ status: 'ok' });
 });
 
 module.exports = { routes };
