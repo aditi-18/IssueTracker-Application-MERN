@@ -43,8 +43,8 @@ function validate(issue) {
   if (issue.title.length < 3) {
     errors.push('Field "title" must be at least 3 characters long.');
   }
-  if (issue.status === 'Assigned' && !issue.owner) {
-    errors.push('Field "owner" is required when status is "Assigned"');
+  if (issue.status === 'Assigned' && !issue.Owner) {
+    errors.push('Field "Owner" is required when status is "Assigned"');
   }
   if (errors.length > 0) {
     throw new UserInputError('Invalid input(s)', { errors });
@@ -67,7 +67,7 @@ async function add(_, { issue }) {
 
 async function update(_, { id, changes }) {
   const db = getDb();
-  if (changes.title || changes.status || changes.owner) {
+  if (changes.title || changes.status || changes.Owner) {
     const issue = await db.collection('issues').findOne({ id });
     Object.assign(issue, changes);
     validate(issue);
@@ -121,7 +121,7 @@ async function counts(_, { status, effortMin, effortMax }) {
     { $match: filter },
     {
       $group: {
-        _id: { owner: '$owner', status: '$status' },
+        _id: { Owner: '$Owner', status: '$status' },
         count: { $sum: 1 },
       },
     },
@@ -130,9 +130,9 @@ async function counts(_, { status, effortMin, effortMax }) {
   const stats = {};
   results.forEach((result) => {
     // eslint-disable-next-line no-underscore-dangle
-    const { owner, status: statusKey } = result._id;
-    if (!stats[owner]) stats[owner] = { owner };
-    stats[owner][statusKey] = result.count;
+    const { Owner, status: statusKey } = result._id;
+    if (!stats[Owner]) stats[Owner] = { Owner };
+    stats[Owner][statusKey] = result.count;
   });
   return Object.values(stats);
 }
