@@ -12,6 +12,7 @@ import graphQLFetch from './graphQLFetch.js';
 import NumInput from './NumInput.jsx';
 import DateInput from './DateInput.jsx';
 import TextInput from './TextInput.jsx';
+import UserContext from './UserContext.js';
 
  class IssueEdit extends React.Component {
   static async fetchData(match, search, showError) {
@@ -139,6 +140,7 @@ import TextInput from './TextInput.jsx';
     const { issue: { title, status } } = this.state;
     const { issue: { Owner, effort, description } } = this.state;
     const { issue: { created, due } } = this.state;
+    const user = this.context;
 
     return (
       <Panel>
@@ -245,7 +247,7 @@ import TextInput from './TextInput.jsx';
             <FormGroup>
               <Col smOffset={3} sm={6}>
                 <ButtonToolbar>
-                  <Button bsStyle="primary" type="submit">Submit</Button>
+                  <Button bsStyle="primary" disabled={!user.signedIn} type="submit">Submit</Button>
                   <LinkContainer to="/issues">
                     <Button bsStyle="link">Back</Button>
                   </LinkContainer>
@@ -266,6 +268,7 @@ import TextInput from './TextInput.jsx';
     );
   }
 }
+IssueEdit.contextType = UserContext;
 const IssueEditWithToast = withToast(IssueEdit);
 IssueEditWithToast.fetchData = IssueEdit.fetchData;
 export default IssueEditWithToast;
