@@ -8,7 +8,7 @@ Through this chapter I learned Sign in using google id, authentication and creat
 
 ### Chap14-Result SnapShot.
 Main page view with signned in user information.
-![](/ReadMeImages/Chap14.PNG)
+![](/ReadMeImages/Chapter14.PNG)
 
 ### Problems faced in this chapter
 -registering using google client id.
