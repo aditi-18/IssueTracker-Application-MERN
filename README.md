@@ -2,6 +2,18 @@
 
 This is my repository for the project described in the book Pro MERN Stack (2nd Ed) by Vasan Subramanian. This readme contains my jouney of learning MERN. I will describe my learnings through every chapter. I will also list down the difficultilies I have faced in very chapter. Finally, I will also put down the results I achieve.<br>
 
+## Chapter14
+
+Through this chapter I learned Sign in using google id, authentication and creating an aware autneticated ui. I also learned  OAuth2 mechanism, with authentication integrations.
+
+### Chap14-Result SnapShot.
+Main page view with signned in user information.
+![](/ReadMeImages/Chap14.PNG)
+
+### Problems faced in this chapter
+-registering using google client id.
+-undersatanding outh mechanism.
+
 ## Chapter13
 
 Through this chapter I learned the concept of befactor the UI code to reuse common code across many components,Pagination and adding search bar.
