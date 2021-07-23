@@ -4,7 +4,7 @@ import {
   MenuItem, Glyphicon,
   Grid, Col,
 } from 'react-bootstrap';
-//import { LinkContainer } from 'react-router-bootstrap';
+import { LinkContainer } from 'react-router-bootstrap';
 
 import IssueAddNavItem from './IssueAddNavItem.jsx';
 import Contents from './Contents.jsx';
