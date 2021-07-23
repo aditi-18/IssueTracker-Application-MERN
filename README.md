@@ -4,15 +4,15 @@ This is my repository for the project described in the book Pro MERN Stack (2nd 
 
 ## Chapter14
 
-Through this chapter I learned Sign in using google id, authentication and creating an aware autneticated ui. I also learned  OAuth2 mechanism, with authentication integrations.
+Through this chapter I learned how to setuo google sign-in for a application, authentication and creating an aware authenticated UI. I also learned OAuth2 mechanism, with authentication integrations.
 
 ### Chap14-Result SnapShot.
 Main page view with signned in user information.
 ![](/ReadMeImages/Chapter14.PNG)
 
 ### Problems faced in this chapter
--registering using google client id.
--undersatanding outh mechanism.
+-Registering using google client id and running the new URL.
+-Undersatanding outh mechanism.
 
 ## Chapter13
 
