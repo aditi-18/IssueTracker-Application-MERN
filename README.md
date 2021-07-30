@@ -10,13 +10,13 @@ Through this chapter I learned how to deploy the application on heroku. I also l
 
 Heroku links-
 
-*https://tracker-ui-aditi1.herokuapp.com
-*https://tracker-api-aditi1.herokuapp.com
+ *https://tracker-ui-aditi1.herokuapp.com
+ *https://tracker-api-aditi1.herokuapp.com
 
 Github Repository Links-
 
-*https://github.com/aditi-18/tracker-api
-*https://github.com/aditi-18/tracker-ui
+ *https://github.com/aditi-18/tracker-api
+ *https://github.com/aditi-18/tracker-ui
 
 Heroku deployed main page view with sign-in user information.
 ![](/ReadMeImages/Chap15.PNG)
