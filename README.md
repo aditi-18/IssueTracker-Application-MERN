@@ -2,9 +2,35 @@
 
 This is my repository for the project described in the book Pro MERN Stack (2nd Ed) by Vasan Subramanian. This readme contains my jouney of learning MERN. I will describe my learnings through every chapter. I will also list down the difficultilies I have faced in very chapter. Finally, I will also put down the results I achieve.<br>
 
+## Chapter15
+
+Through this chapter I learned how to deploy the application on heroku. I also learned how to setup connection string using MongoDb compass and Atlas. This chapter on the whole helped me understand the various factors to be considered during deployment. 
+
+### Chap15-Result
+
+Heroku links-
+
+https://tracker-ui-aditi1.herokuapp.com
+https://tracker-api-aditi1.herokuapp.com
+
+Github Repository Links-
+
+https://github.com/aditi-18/tracker-api
+https://github.com/aditi-18/tracker-ui
+
+Heroku deployed main page view with sign-in user information.
+![](/ReadMeImages/Chap15.PNG)
+![](/ReadMeImages/Chap15_1.PNG)
+
+
+### Problems faced in this chapter
+-Setting up Db_URL.
+-Deploying api.
+-Proxy setup
+
 ## Chapter14
 
-Through this chapter I learned how to setuo google sign-in for a application, authentication and creating an aware authenticated UI. I also learned OAuth2 mechanism, with authentication integrations.
+Through this chapter I learned how to setup google sign-in for a application, authentication and creating an aware authenticated UI. I also learned OAuth2 mechanism, with authentication integrations.
 
 ### Chap14-Result SnapShot.
 Main page view with signned in user information.
