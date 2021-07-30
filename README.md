@@ -25,7 +25,6 @@ Heroku deployed main page view with sign-in user information.
 ![](/ReadMeImages/Chap15.PNG)
 ![](/ReadMeImages/Chap15_1.PNG)
 
-
 ### Problems faced in this chapter
 1)Setting up Db_URL.
 
@@ -147,7 +146,6 @@ Through this chapter I've learned about splitting the code into multiple files a
 ### Chap8-Result SnapShot.
 
 ![](/ReadMeImages/Chap8.PNG)
-
 
 ### Problems faced in this chapter
 1)Using webpack
