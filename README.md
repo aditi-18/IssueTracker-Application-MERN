@@ -2,6 +2,7 @@
 
 This is my repository for the project described in the book Pro MERN Stack (2nd Ed) by Vasan Subramanian. This readme contains my jouney of learning MERN. I will describe my learnings through every chapter. I will also list down the difficultilies I have faced in very chapter. Finally, I will also put down the results I achieve.<br>
 
+
 ## Chapter15
 
 Through this chapter I learned how to deploy the application on heroku. I also learned how to setup connection string using MongoDb compass and Atlas. This chapter on the whole helped me understand the various factors to be considered during deployment. 
@@ -10,15 +11,15 @@ Through this chapter I learned how to deploy the application on heroku. I also l
 
 Heroku links-
 
- *https://tracker-ui-aditi1.herokuapp.com
+ 1)https://tracker-ui-aditi1.herokuapp.com
 
- *https://tracker-api-aditi1.herokuapp.com
+ 2)https://tracker-api-aditi1.herokuapp.com
 
 Github Repository Links-
 
- *https://github.com/aditi-18/tracker-api
+ 1)https://github.com/aditi-18/tracker-api
 
- *https://github.com/aditi-18/tracker-ui
+ 2)https://github.com/aditi-18/tracker-ui
 
 Heroku deployed main page view with sign-in user information.
 ![](/ReadMeImages/Chap15.PNG)
@@ -26,11 +27,12 @@ Heroku deployed main page view with sign-in user information.
 
 
 ### Problems faced in this chapter
-*Setting up Db_URL.
+1)Setting up Db_URL.
 
-*Deploying api.
+2)Deploying api.
 
-*Proxy setup
+3)Proxy setup.
+
 
 ## Chapter14
 
@@ -41,8 +43,10 @@ Main page view with signned in user information.
 ![](/ReadMeImages/Chapter14.PNG)
 
 ### Problems faced in this chapter
--Registering using google client id and running the new URL.
--Undersatanding outh mechanism.
+1)Registering using google client id and running the new URL.
+
+2)Undersatanding outh mechanism.
+
 
 ## Chapter13
 
@@ -56,8 +60,10 @@ Report page
 ![](/ReadMeImages/Chap13_2.PNG)
 
 ### Problems faced in this chapter
--Making changes in IssueList.
--Understanding how pagination works.
+1)Making changes in IssueList.
+
+2)Understanding how pagination works.
+
 
 ## Chapter12
 
@@ -71,8 +77,10 @@ View Page source
 ![](/ReadMeImages/Chap12_2.PNG)
 
 ### Problems faced in this chapter
--Making changes in IssueList and render.js.
--Understanding server connectivity.
+1)Making changes in IssueList and render.js.
+
+2)Understanding server connectivity.
+
 
 ## Chapter11
 
@@ -95,8 +103,10 @@ Alert
 ![](/ReadMeImages/Chap11_5.PNG)
 
 ### Problems faced in this chapter
--Setting up mklink in the ui directory.
--Responsiveness.
+1)Setting up mklink in the ui directory.
+
+2)Responsiveness.
+
 
 ## Chapter10
 
@@ -109,8 +119,9 @@ Through this chapter I learned the concept of hard-coded filter to more flexible
 ![](/ReadMeImages/Chap10_1.PNG)
 
 ### Problems faced in this chapter
--Understanding object from the console.
--Understading playground inputs. 
+1)Understanding object from the console.
+
+2)Understading playground inputs. 
 
 
 ## Chapter9
@@ -126,7 +137,8 @@ Drop down menu
 ![](/ReadMeImages/chap9_4.png)
 
 ### Problems faced in this chapter
--Understanding linking of multiple files. 
+1)Understanding linking of multiple files. 
+
 
 ## Chapter8
 
@@ -138,7 +150,8 @@ Through this chapter I've learned about splitting the code into multiple files a
 
 
 ### Problems faced in this chapter
--Using webpack
+1)Using webpack
+
 
 ## Chapter7
 
@@ -156,9 +169,12 @@ Display on port 8000
 ![](/ReadMeImages/Chap_7.PNG)
 
 ### Problems faced in this chapter
--Setting up  environment.
--Understanding the working of server from api and ui.
--Eslint indentation errors.<br>
+1)Setting up  environment.
+
+2)Understanding the working of server from api and ui.
+
+3)Eslint indentation errors.<br>
+
 
 ## Chapter6
 
@@ -171,7 +187,7 @@ ID field updated-
 ![](/ReadMeImages/Chp6_1.PNG)
 
 ### Problems faced in this chapter
--Setting up monogo environment.<br>
+1)Setting up monogo environment.<br>
 
 
 ## Chapter5
@@ -187,10 +203,9 @@ Through this chapter I learned about express, REST API's and GraphQL. I learnt h
 ![](/ReadMeImages/Chap5_6.PNG)
 
 ### Problems faced in this chapter
--Initial understanding of GraphQL.
--GqaphQL is strongly typed which can lead to mistakes.<br>
+1)Initial understanding of GraphQL.
 
-
+2)GqaphQL is strongly typed which can lead to mistakes.<br>
 
 
 ## Chapter4
@@ -203,10 +218,11 @@ Through this chapter I learned how to make components repsond to user input and 
 ![](/ReadMeImages/Capture4_2.PNG)
 
 ### Problems faced in this chapter
--Initial understanding of useage of state.
--Understanding flow of data among the components.
--Updating data using form.<br>
+1)Initial understanding of useage of state.
 
+2)Understanding flow of data among the components.
+
+3)Updating data using form.<br>
 
 
 ## Chapter3
@@ -217,9 +233,7 @@ Through this chapter I learnt in detail about the react classses and components.
 ![](/ReadMeImages/Chap3.PNG)
 
 ### Problems faced in this chapter
--Initial understanding of react classes and objects.<br>
-
-
+1)Initial understanding of react classes and objects.<br>
 
 
 ## Chapter2
@@ -231,6 +245,8 @@ serve that page from a web server. This helped me learn fundamentals of these te
 ![](/ReadMeImages/Ch2.PNG)
 
 ### Problems faced in this chapter
--Working with babel.
--Working on the "Older Browsers Support" section.
--Adding snapshots to the README file.
+1)Working with babel.
+
+2)Working on the "Older Browsers Support" section.
+
+3)Adding snapshots to the README file.
